@@ -1,0 +1,58 @@
+{
+  "name": "gatsby-ecommerce-professional",
+  "private": true,
+  "description": "An E Commerce starter for Gatsby",
+  "version": "0.1.0",
+  "author": "Nader Dabit <dabit3@gmail.com>",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "esm": "^3.2.25",
+    "fs": "^0.0.1-security",
+    "gatsby": "^2.19.7",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-layout": "^1.1.22",
+    "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-offline": "^2.2.10",
+    "gatsby-plugin-postcss": "^2.1.19",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-plugin-stripe": "^1.2.3",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "graphql": "^14.6.0",
+    "graphql-tag": "^2.10.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.9.0",
+    "react-stripe-elements": "^6.0.1",
+    "react-toastify": "^5.5.0",
+    "tailwindcss": "^1.1.4",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dabit3/gatsby-ecommerce-professional"
+  },
+  "bugs": {
+    "url": "https://github.com/dabit3/gatsby-ecommerce-professional/issues"
+  }
+}
