@@ -47,3 +47,9 @@ Update __providers/inventoryProvider.js__ with your own inventory provider.
 2. Update __src/templates/ViewInventory.js__ with methods to interact with the actual inventory API.
 
 3. Update __src/components/formComponents/AddInventory.js__ with methods to add item to actual inventory API.
+
+### Other considerations
+
+#### Images
+
+If you're using dynamic images over http, you can add a build step into `exports.createPages` in __gatsby-node.esm.js__ to download the images locally to improve the user experience. You can also add a placeholder image in __src/components/Image.js__ or make some adjustments in that component for other image loading enhancements.
