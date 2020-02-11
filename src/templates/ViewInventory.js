@@ -18,10 +18,6 @@ class ViewInventory extends React.Component {
     const inventory = await getInventory()
     this.setState({ inventory })
   }
-  deleteItem = async index => {
-    const inventory = [...this.state.inventory.slice(0, index), ...this.state.inventory.slice(index + 1)]
-    this.setState({ inventory })
-  }
   editItem = (item, index) => {
     const editingIndex = index
     this.setState({ editingIndex, currentItem: item })    
@@ -31,6 +27,10 @@ class ViewInventory extends React.Component {
     inventory[index] = this.state.currentItem
     // update item in database
     this.setState({ editingIndex: null, inventory })
+  }
+  deleteItem = async index => {
+    const inventory = [...this.state.inventory.slice(0, index), ...this.state.inventory.slice(index + 1)]
+    this.setState({ inventory })
   }
   onChange = event => {
     const currentItem = {
