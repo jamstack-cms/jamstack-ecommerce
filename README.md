@@ -13,7 +13,7 @@ Out of the box, the site uses completely static data coming from a provider at `
 1. Clone the project
 
 ```sh
-$ git clone https://github.com/dabit3/jamstack-ecommerce-professional.git
+$ git clone https://github.com/jamstack-cms/jamstack-ecommerce.git
 ```
 
 2. Install the dependencies:
