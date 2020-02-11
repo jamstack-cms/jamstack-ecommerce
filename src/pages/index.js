@@ -1,7 +1,7 @@
 import React from "react"
 
 import SEO from "../components/seo" 
-import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium, Spacer } from '../components'
+import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
 import DynamicLayout from '../layouts/dynamicLayout'
 import { titleIfy, slugify } from '../../utils/helpers'
 

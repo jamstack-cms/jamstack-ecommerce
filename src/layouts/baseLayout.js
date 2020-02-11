@@ -32,7 +32,7 @@ class Layout extends React.Component {
       {
         context => {
           console.log('baselayout rerendering...')
-          let { numberOfItemsInCart, navItems: { navInfo: { data: links }}} = context
+          let { navItems: { navInfo: { data: links }}} = context
   
           links = links.map(link => {
             const newLink = {}

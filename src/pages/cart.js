@@ -46,7 +46,7 @@ const Cart = ({ context }) => {
                                 {DENOMINATION + item.price}
                               </p>
                             </div>
-                            <div onClick={() => removeFromCart(item)} className="m-0 ml-10 text-gray-900 text-s cursor-pointer">
+                            <div role="button" onClick={() => removeFromCart(item)} className="m-0 ml-10 text-gray-900 text-s cursor-pointer">
                               <FaTimes />
                             </div>
                           </div>

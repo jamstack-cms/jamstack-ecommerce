@@ -14,8 +14,8 @@ class Inventory extends React.Component {
        <div>
           <h3>Inventory</h3>
           <div className="flex">
-            <p className="mr-4 cursor-pointer hover:text-secondary" onClick={() => this.toggleViewState('view')}>View</p>
-            <p className="cursor-pointer hover:text-secondary" onClick={() => this.toggleViewState('add')}>Add</p>
+            <p role="button" className="mr-4 cursor-pointer hover:text-secondary" onClick={() => this.toggleViewState('view')}>View</p>
+            <p role="button" className="cursor-pointer hover:text-secondary" onClick={() => this.toggleViewState('add')}>Add</p>
           </div>
           {
             this.state.viewState === 'view' ? (
