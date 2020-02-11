@@ -6,7 +6,7 @@ Out of the box, the site uses completely static data coming from a provider at `
 
 ![](design.jpg)
 
-> This project is still in Beta. The final version will live in the [JAMstack CMS](https://github.com/jamstack-cms) repository once finished.
+> This project is still in Beta.
 
 ### Getting started
 
