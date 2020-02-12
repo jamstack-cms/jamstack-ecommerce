@@ -1,14 +1,5 @@
 const stripe = require("stripe")("API_KEY")
 
-/*
-const order = {
-  email: 'customer@site.com',
-  amount: total,
-  token: token.id,
-  address: this.state,
-}
-*/
-
 exports.handler = async event => {
   if (!event.body || event.httpMethod !== "POST") {
     return {
