@@ -63,3 +63,7 @@ Update __providers/inventoryProvider.js__ with your own inventory provider.
 #### Images
 
 If you're using dynamic images over http, you can add a build step into `exports.createPages` in __gatsby-node.esm.js__ to download the images locally to improve the user experience. You can also add a placeholder image in __src/components/Image.js__ or make some adjustments in that component for other image loading enhancements.
+
+#### Server-side processing of payments
+
+To see an example of how to process payments server-side with stripe, check out the [Lambda function in the snippets folder](https://github.com/jamstack-cms/jamstack-ecommerce/blob/master/snippets.js/lambda.js).
