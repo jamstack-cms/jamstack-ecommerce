@@ -33,13 +33,13 @@ exports.handler = async event => {
         .create(
           {
             currency: "usd",
-            amount: data.amount,
-            receipt_email: data.email,
+            amount: order.amount,
+            receipt_email: order.email,
             customer: customer.id,
             description: "Purchase from JSEC"
           },
           {
-            idempotency_key: data.id
+            idempotency_key: order.id
           }
         )
         .then(result => {
