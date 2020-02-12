@@ -7,7 +7,6 @@
 
 import React from "react"
 import { Link } from "gatsby"
-import "./layout.css"
 import { SiteContext } from '../context/mainContext'
 import { titleIfy, slugify } from '../../utils/helpers'
 import 'react-toastify/dist/ReactToastify.css'

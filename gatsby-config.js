@@ -5,6 +5,12 @@ module.exports = {
     author: `@dabit3`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layouts/baseLayout.js`),
+      },
+    },
     `gatsby-plugin-stripe`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
