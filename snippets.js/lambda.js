@@ -21,34 +21,44 @@ exports.handler = async event => {
     return 1400
   }
 
-  const intent = await stripe.paymentIntents.create({
-    amount: calculateOrderAmount(order.items),
-    currency: "usd",
-    payment_method: order.payment_method_id,
+  try {
+    const intent = await stripe.paymentIntents.create({
+      amount: calculateOrderAmount(order.items),
+      currency: "usd",
+      payment_method: order.payment_method_id,
 
-    // A PaymentIntent can be confirmed some time after creation,
-    // but here we want to confirm (collect payment) immediately.
-    confirm: true,
+      // A PaymentIntent can be confirmed some time after creation,
+      // but here we want to confirm (collect payment) immediately.
+      confirm: true,
 
-    // If the payment requires any follow-up actions from the
-    // customer, like two-factor authentication, Stripe will error
-    // and you will need to prompt them for a new payment method.
-    error_on_requires_action: true,
-  })
-
-  if (intent.status === "succeeded") {
-    // This creates a new Customer and attaches the PaymentMethod in one API call.
-    const customer = await stripe.customers.create({
-      payment_method: intent.payment_method,
-      email: order.email,
-      address: order.address,
+      // If the payment requires any follow-up actions from the
+      // customer, like two-factor authentication, Stripe will error
+      // and you will need to prompt them for a new payment method.
+      error_on_requires_action: true,
     })
-    // Handle post-payment fulfillment
-    console.log(`Created Payment: ${intent.id} for Customer: ${customer.id}`)
-    // Now ship those goodies
-    await inventoryAPI.ship(order)
-  } else {
-    // Any other status would be unexpected, so error
-    console.log({ error: "Unexpected status " + intent.status })
+
+    if (intent.status === "succeeded") {
+      // This creates a new Customer and attaches the PaymentMethod in one API call.
+      const customer = await stripe.customers.create({
+        payment_method: intent.payment_method,
+        email: order.email,
+        address: order.address,
+      })
+      // Handle post-payment fulfillment
+      console.log(`Created Payment: ${intent.id} for Customer: ${customer.id}`)
+      // Now ship those goodies
+      await inventoryAPI.ship(order)
+    } else {
+      // Any other status would be unexpected, so error
+      console.log({ error: "Unexpected status " + intent.status })
+    }
+  } catch (e) {
+    if (e.type === "StripeCardError") {
+      // Display error to customer
+      console.log({ error: e.message })
+    } else {
+      // Something else happened
+      console.log(500).send({ error: e.type })
+    }
   }
 }
