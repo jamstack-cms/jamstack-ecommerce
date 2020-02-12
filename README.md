@@ -48,6 +48,16 @@ Update __providers/inventoryProvider.js__ with your own inventory provider.
 
 3. Update __src/components/formComponents/AddInventory.js__ with methods to add item to actual inventory API.
 
+### Roadmap for V1
+
+- Add ability to specify quantities in cart
+- Auto dropdown navigation for large number of categories
+- Ability to add more / more configurable metadata to item details
+- Themeing (dark mode)
+- Better image support out of the box
+- Optional user account / profiles out of the box
+- Have an idea or a request? Submit [an issue](https://github.com/jamstack-cms/jamstack-ecommerce/issues) or [a pull request](https://github.com/jamstack-cms/jamstack-ecommerce/pulls)!
+
 ### Other considerations
 
 #### Images
