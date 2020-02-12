@@ -58,7 +58,7 @@ exports.handler = async event => {
       console.log({ error: e.message })
     } else {
       // Something else happened
-      console.log(500).send({ error: e.type })
+      console.log({ error: e.type })
     }
   }
 }
