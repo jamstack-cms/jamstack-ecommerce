@@ -4,7 +4,7 @@ import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import { DENOMINATION } from '../../providers/inventoryProvider'
 import { FaTimes, FaLongArrowAltRight } from 'react-icons/fa'
 import { Link } from 'gatsby'
-import DynamicLayout from '../layouts/dynamicLayout'
+import CartLink from '../components/CartLink'
 import { slugify } from '../../utils/helpers'
 import Image from '../components/Image'
 
@@ -12,7 +12,8 @@ const Cart = ({ context }) => {
   const { numberOfItemsInCart, cart, removeFromCart, total } = context
   const cartEmpty = numberOfItemsInCart === Number(0)
   return (
-    <DynamicLayout>
+    <>
+      <CartLink />
       <div className="flex flex-col items-center pb-10">
         <div className="
           flex flex-col w-full
@@ -72,7 +73,7 @@ const Cart = ({ context }) => {
           )}
         </div>
       </div>
-    </DynamicLayout>
+    </>
   )
 }
 

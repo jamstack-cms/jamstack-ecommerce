@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import { DENOMINATION } from '../../providers/inventoryProvider'
@@ -150,12 +150,16 @@ class Checkout extends React.Component {
 const InjectedCheckout = injectStripe(Checkout)
 
 function CheckoutWithContext(props) {
+  const [apiKey, updateApiKey] = useState(null)
+  useEffect(() => {
+    updateApiKey(window.Stripe("pk_test_DvXwcKnVaaZUpWJIbh9cjgZr00IjIAjZAA"))
+  }, [])
   return (
     <ContextProviderComponent>
       <SiteContext.Consumer>
         {
           context => (
-            <StripeProvider apiKey="pk_test_DvXwcKnVaaZUpWJIbh9cjgZr00IjIAjZAA">
+            <StripeProvider stripe={apiKey}>
               <Elements>
                 <InjectedCheckout {...props} context={context} />
               </Elements>

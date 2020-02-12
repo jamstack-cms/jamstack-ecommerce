@@ -7,8 +7,7 @@ const ListItem = ({ link, title, imageSrc, price }) =>  (
   <div className="
     w-100
     md:w-1/2
-    lg:w-1/2
-    desktop:w-1/4
+    lg:w-1/4
     p1 sm:p-2
   ">
     <Link to={`/${link}`}>

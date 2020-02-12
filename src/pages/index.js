@@ -2,7 +2,7 @@ import React from "react"
 
 import SEO from "../components/seo" 
 import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
-import DynamicLayout from '../layouts/dynamicLayout'
+import CartLink from '../components/CartLink'
 import { titleIfy, slugify } from '../../utils/helpers'
 
 import { graphql } from 'gatsby'
@@ -13,7 +13,8 @@ const Home = ({ data: gqlData }) => {
   const inventory = inventoryInfo.data.slice(0, 4)
 
   return (
-    <DynamicLayout>
+    <>
+      <CartLink />
       <SEO title="Home" />
       <div className="w-full">
         <div className="bg-green-200
@@ -61,7 +62,7 @@ const Home = ({ data: gqlData }) => {
         
         <DisplaySmall imageSrc={inventory[3].image} title={inventory[3].name} subtitle={inventory[3].categories[0]} link={slugify(inventory[3].name)} />
       </div>
-    </DynamicLayout>
+    </>
   )
 }
 

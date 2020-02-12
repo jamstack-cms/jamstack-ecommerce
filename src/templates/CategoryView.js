@@ -1,12 +1,13 @@
 import React from 'react'
 import ListItem from '../components/ListItem'
 import { titleIfy, slugify } from '../../utils/helpers'
-import DynamicLayout from '../layouts/dynamicLayout'
+import CartLink from '../components/CartLink'
 
 const CategoryView = (props) => {
   const { pageContext: { title, content: { items = [] }}} = props
   return (
-    <DynamicLayout>
+    <>
+      <CartLink />
       <div className="flex flex-col items-center">
         <div className="max-w-fw flex flex-col">
           <div className="pt-10 pb-8">
@@ -32,7 +33,7 @@ const CategoryView = (props) => {
           </div>
           </div>
       </div>
-    </DynamicLayout>
+    </>
   )
 }
 

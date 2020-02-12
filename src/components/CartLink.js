@@ -5,11 +5,11 @@ import { Link } from "gatsby"
 import { colors } from '../theme'
 const { secondary } = colors
 
-class DynamicLayout extends React.Component {
+class CartLink extends React.Component {
   render() {
     let { context: { numberOfItemsInCart } = { numberOfItemsInCart: 0 } } = this.props
     return (
-      <>
+      <div>
         <div className="fixed top-49 right-20 desktop:right-flexiblemargin z-10">
           <div className="flex flex-1 justify-end pr-4 relative">
             <Link to="/cart">
@@ -24,22 +24,21 @@ class DynamicLayout extends React.Component {
             }
           </div>
         </div>
-        {this.props.children}
-      </>
+      </div>
     )
   }
 }
 
 
-function DynamicLayoutWithContext(props) {
+function CartLinkWithContext(props) {
   return (
     <SiteContext.Consumer>
       {
-        context => <DynamicLayout {...props} context={context} />
+        context => <CartLink {...props} context={context} />
       }
     </SiteContext.Consumer>
   )
 }
 
 
-export default DynamicLayoutWithContext
+export default CartLinkWithContext
