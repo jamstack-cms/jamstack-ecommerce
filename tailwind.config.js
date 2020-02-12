@@ -12,9 +12,9 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'desktop': '1440px',
+        'mobile': '600px',
         'c_large': '1200px',
-        'mobile': '600px'
+        'desktop': '1440px'
       },
       width: {
         '28': '7rem',
