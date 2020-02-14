@@ -1,13 +1,13 @@
 // https://stripe.com/docs/payments/without-card-authentication
-const stripe = require("stripe")("API_KEY")
+const stripe = require('stripe')('API_KEY')
 
 exports.handler = async event => {
-  if (!event.body || event.httpMethod !== "POST") {
+  if (!event.body || event.httpMethod !== 'POST') {
     return {
       statusCode: 400,
       headers,
       body: JSON.stringify({
-        status: "invalid http method",
+        status: 'invalid http method',
       }),
     }
   }
@@ -18,13 +18,14 @@ exports.handler = async event => {
     // Replace this constant with a calculation of the order's amount
     // You should always calculate the order total on the server to prevent
     // people from directly manipulating the amount on the client
+    // See example implementation in ../snippets.js/express_server.js
     return 1400
   }
 
   try {
     const intent = await stripe.paymentIntents.create({
       amount: calculateOrderAmount(order.items),
-      currency: "usd",
+      currency: 'usd',
       payment_method: order.payment_method_id,
 
       // A PaymentIntent can be confirmed some time after creation,
@@ -37,7 +38,7 @@ exports.handler = async event => {
       error_on_requires_action: true,
     })
 
-    if (intent.status === "succeeded") {
+    if (intent.status === 'succeeded') {
       // This creates a new Customer and attaches the PaymentMethod in one API call.
       const customer = await stripe.customers.create({
         payment_method: intent.payment_method,
@@ -50,10 +51,10 @@ exports.handler = async event => {
       await inventoryAPI.ship(order)
     } else {
       // Any other status would be unexpected, so error
-      console.log({ error: "Unexpected status " + intent.status })
+      console.log({ error: 'Unexpected status ' + intent.status })
     }
   } catch (e) {
-    if (e.type === "StripeCardError") {
+    if (e.type === 'StripeCardError') {
       // Display error to customer
       console.log({ error: e.message })
     } else {
