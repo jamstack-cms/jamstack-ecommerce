@@ -1,11 +1,11 @@
-import React from 'react'
-import Button from '../components/Button'
+import React from "react"
+import Button from "../components/Button"
 
-import { SiteContext, ContextProviderComponent } from '../context/mainContext'
-import CartLink from '../components/CartLink'
-import Image from '../components/Image'
-import CommerceMetaData from '../components/commerce/CommerceMetaData'
-import { slugify } from '../../utils/helpers'
+import { SiteContext, ContextProviderComponent } from "../context/mainContext"
+import CartLink from "../components/CartLink"
+import Image from "../components/Image"
+import CommerceMetaData from "../components/commerce/CommerceMetaData"
+import { slugify } from "../../utils/helpers"
 
 const ItemView = props => {
   const item = props.pageContext.content

@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import { SiteContext, ContextProviderComponent } from '../context/mainContext'
-import { DENOMINATION } from '../../providers/inventoryProvider'
-import { FaLongArrowAltLeft } from 'react-icons/fa'
-import { Link } from 'gatsby'
-import Image from '../components/Image'
-import { fetchPostJSON } from '../../utils/helpers'
-import uuid from 'uuid/v4'
+import { SiteContext, ContextProviderComponent } from "../context/mainContext"
+import { DENOMINATION } from "../../providers/inventoryProvider"
+import { FaLongArrowAltLeft } from "react-icons/fa"
+import { Link } from "gatsby"
+import Image from "../components/Image"
+import { fetchPostJSON } from "../../utils/helpers"
+import uuid from "uuid/v4"
 
 import {
   CardElement,
   Elements,
   useStripe,
   useElements,
-} from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
+} from "@stripe/react-stripe-js"
+import { loadStripe } from "@stripe/stripe-js"
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe('pk_test_9LMKfbJSTwlckL4EIOeakphR00W7j9f6MJ')
+const stripePromise = loadStripe("pk_test_9LMKfbJSTwlckL4EIOeakphR00W7j9f6MJ")
 
 function CheckoutWithContext(props) {
   return (
@@ -53,12 +53,12 @@ const Checkout = ({ context }) => {
   const [errorMessage, setErrorMessage] = useState(null)
   const [orderCompleted, setOrderCompleted] = useState(false)
   const [input, setInput] = useState({
-    name: '',
-    email: '',
-    street: '',
-    city: '',
-    postal_code: '',
-    state: '',
+    name: "",
+    email: "",
+    street: "",
+    city: "",
+    postal_code: "",
+    state: "",
   })
 
   const stripe = useStripe()
@@ -82,7 +82,7 @@ const Checkout = ({ context }) => {
 
     // Validate input
     if (!street || !city || !postal_code || !state) {
-      setErrorMessage('Please fill in the form!')
+      setErrorMessage("Please fill in the form!")
       return
     }
 
@@ -96,7 +96,7 @@ const Checkout = ({ context }) => {
       error: stripeError,
       paymentMethod,
     } = await stripe.createPaymentMethod({
-      type: 'card',
+      type: "card",
       card: cardElement,
       billing_details: { name: name },
     })
@@ -111,13 +111,13 @@ const Checkout = ({ context }) => {
       email,
       name,
       amount: total,
-      currency: 'usd', // TODO: Move currency into config file.
+      currency: "usd", // TODO: Move currency into config file.
       address: { line1: street, city, postal_code, state }, // TODO country
       payment_method_id: paymentMethod.id,
-      receipt_email: 'customer@example.com',
+      receipt_email: "customer@example.com",
       id: uuid(),
     }
-    console.log('order: ', order)
+    console.log("order: ", order)
     // Call our lambda endpoint to validate and create the payment
     // See example at https://runkit.com/thor-stripe/gocommerce-clone-api
     // TODO: show processing spinner and lock UI.
@@ -125,7 +125,7 @@ const Checkout = ({ context }) => {
       payment,
       error,
     } = await fetchPostJSON(
-      'https://gocommerce-clone-api-eig8cd0l634r.runkit.sh/pay',
+      "https://gocommerce-clone-api-eig8cd0l634r.runkit.sh/pay",
       { order }
     )
     if (error) {
@@ -197,7 +197,7 @@ const Checkout = ({ context }) => {
               <div className="flex flex-1 pt-8 flex-col">
                 <div className="mt-4 border-t pt-10">
                   <form onSubmit={handleSubmit}>
-                    {errorMessage ? <span>{errorMessage}</span> : ''}
+                    {errorMessage ? <span>{errorMessage}</span> : ""}
                     <Input
                       onChange={onChange}
                       value={input.name}

@@ -1,30 +1,30 @@
 // Online example: https://runkit.com/thor-stripe/gocommerce-clone-api
-const express = require('express')
+const express = require("express")
 const app = express()
 const port = 3000
 
-const fetch = require('isomorphic-unfetch')
-const DomParser = require('dom-parser')
+const fetch = require("isomorphic-unfetch")
+const DomParser = require("dom-parser")
 const parser = new DomParser()
 
-const stripe = require('stripe')(process.env.JAMSTACK_SECRET_KEY)
+const stripe = require("stripe")(process.env.JAMSTACK_SECRET_KEY)
 
 // Constants
-const SITE_URL = 'https://53806382.ngrok.io/'
+const SITE_URL = "https://53806382.ngrok.io/"
 // Helper functions
 const getProductData = async url => {
   // Get the product meta from the static page
   const doc = await fetch(url).then(async res => {
     const htmlString = await res.text()
-    return parser.parseFromString(htmlString, 'text/html')
+    return parser.parseFromString(htmlString, "text/html")
   })
-  if (doc.getElementsByClassName('gocommerce-product').length !== 1) {
-    throw new Error('None or too many product data declarations!')
+  if (doc.getElementsByClassName("gocommerce-product").length !== 1) {
+    throw new Error("None or too many product data declarations!")
     return
   }
   // Replace HTML special chars
   const jsonString = doc
-    .getElementsByClassName('gocommerce-product')[0]
+    .getElementsByClassName("gocommerce-product")[0]
     .innerHTML.replace(/&quot;/g, `"`)
   return JSON.parse(jsonString)
 }
@@ -47,22 +47,22 @@ const calculateOrderAmount = ({ order, products }) => {
 }
 
 // use body-parser to automatically parse JSON-encoded request bodies
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser")
 app.use(bodyParser.json())
 
 // Allow cors
-app.use('/', function(req, res, next) {
+app.use("/", function(req, res, next) {
   // Allow requests from localhost.
-  const allowedOrigins = ['http://localhost:9000'] // port that's used when running gatsby serve
+  const allowedOrigins = ["http://localhost:9000"] // port that's used when running gatsby serve
   const origin = req.headers.origin
   if (allowedOrigins.indexOf(origin) > -1) {
-    res.setHeader('Access-Control-Allow-Headers', '*')
-    res.setHeader('Access-Control-Allow-Origin', origin)
+    res.setHeader("Access-Control-Allow-Headers", "*")
+    res.setHeader("Access-Control-Allow-Origin", origin)
   }
   next()
 })
 
-app.post('/pay', async (req, res) => {
+app.post("/pay", async (req, res) => {
   const { order } = req.body
   const skuIds = order.cart.map(item => item.sku)
 
@@ -87,7 +87,7 @@ app.post('/pay', async (req, res) => {
         amount: totalAmount * 100, // TODO zero decimal currency detection
         currency: order.currency,
         payment_method: order.payment_method_id,
-        setup_future_usage: 'off_session',
+        setup_future_usage: "off_session",
 
         // A PaymentIntent can be confirmed some time after creation,
         // but here we want to confirm (collect payment) immediately.
@@ -99,7 +99,7 @@ app.post('/pay', async (req, res) => {
         error_on_requires_action: true,
       })
 
-      if (intent.status === 'succeeded') {
+      if (intent.status === "succeeded") {
         // This creates a new Customer and attaches the PaymentMethod in one API call.
         const customer = await stripe.customers.create({
           payment_method: intent.payment_method,
@@ -117,10 +117,10 @@ app.post('/pay', async (req, res) => {
         // Any other status would be unexpected, so error
         res
           .status(400)
-          .json({ error: { message: 'Unexpected status ' + intent.status } })
+          .json({ error: { message: "Unexpected status " + intent.status } })
       }
     } catch (error) {
-      if (error.type === 'StripeCardError') {
+      if (error.type === "StripeCardError") {
         // Display error to customer
         res.status(400).json({ error: error.raw })
       } else {
@@ -131,7 +131,7 @@ app.post('/pay', async (req, res) => {
   } else {
     res
       .status(400)
-      .json({ error: 'Order amount does not match product prices.' })
+      .json({ error: "Order amount does not match product prices." })
   }
 })
 
