@@ -24,6 +24,7 @@
     "gatsby-transformer-sharp": "^2.3.13",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
+    "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-country-region-selector": "^1.4.7",
