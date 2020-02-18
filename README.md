@@ -59,7 +59,7 @@ As it is set up, inventory is fetched from a local hard coded array of inventory
 
 Update __providers/inventoryProvider.js__ with your own inventory provider.
 
-#### Download images ad build time
+#### Download images at build time
 
 If you change the provider to fetch images from a remote source, you may choose to also download the images locally at build time to improve performance. Here is an example of some code that should work for this use case:
 
