@@ -29,7 +29,6 @@ class ConfirmSignUp extends React.Component {
                 <input
                 onChange={this.onChange} name="authcode"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="authcode" type="authcode" />
-                <p className="text-secondary text-xs italic">Please choose a password.</p>
               </div>
               <div className="flex items-center justify-between">
                 <button onClick={() => this.props.confirmSignUp(this.state)} className="bg-secondary hover:bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
