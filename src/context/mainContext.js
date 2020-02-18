@@ -1,6 +1,6 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
-import { toast } from 'react-toastify';
+import { StaticQuery, graphql } from "gatsby"
+import { toast } from "react-toastify"
 
 const mainQuery = graphql`
   query {
@@ -10,12 +10,12 @@ const mainQuery = graphql`
   }
 `
 
-const STORAGE_KEY = process.env.STORAGE_KEY; //'GATSBY_ECOMMERCE_STARTER_'
+const STORAGE_KEY = process.env.GATSBY_STORAGE_KEY //'GATSBY_ECOMMERCE_STARTER_'
 
 const initialState = {
   cart: [],
   numberOfItemsInCart: 0,
-  total: 0
+  total: 0,
 }
 
 const SiteContext = React.createContext()
@@ -30,34 +30,44 @@ function calculateTotal(cart) {
 
 class ContextProviderComponent extends React.Component {
   componentDidMount() {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const storageState = window.localStorage.getItem(STORAGE_KEY)
       if (!storageState) {
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify(initialState))
       }
     }
   }
-  addToCart = (item) => {
+  addToCart = item => {
     const storageState = JSON.parse(window.localStorage.getItem(STORAGE_KEY))
     const { cart } = storageState
     cart.push(item)
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart)
-    }))
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        cart,
+        numberOfItemsInCart: cart.length,
+        total: calculateTotal(cart),
+      })
+    )
     toast("Successfully added item to cart!", {
-      position: toast.POSITION.TOP_LEFT
+      position: toast.POSITION.TOP_LEFT,
     })
     this.forceUpdate()
   }
 
-  removeFromCart = (item) => {
+  removeFromCart = item => {
     const storageState = JSON.parse(window.localStorage.getItem(STORAGE_KEY))
     let { cart } = storageState
     cart = cart.filter(c => c.id !== item.id)
 
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart)
-    }))
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        cart,
+        numberOfItemsInCart: cart.length,
+        total: calculateTotal(cart),
+      })
+    )
     this.forceUpdate()
   }
 
@@ -68,35 +78,35 @@ class ContextProviderComponent extends React.Component {
 
   render() {
     let state = initialState
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const storageState = window.localStorage.getItem(STORAGE_KEY)
       if (storageState) {
         state = JSON.parse(storageState)
       }
     }
-    console.log('state: ', state)
+    console.log("state: ", state)
 
     return (
       <StaticQuery query={mainQuery}>
-        { queryData => {
+        {queryData => {
           return (
-            <SiteContext.Provider value={{
-              ...state,
-               navItems: queryData,
-               addToCart: this.addToCart,
-               clearCart: this.clearCart,
-               removeFromCart: this.removeFromCart
-            }}>
-             {this.props.children}
-           </SiteContext.Provider>
+            <SiteContext.Provider
+              value={{
+                ...state,
+                navItems: queryData,
+                addToCart: this.addToCart,
+                clearCart: this.clearCart,
+                removeFromCart: this.removeFromCart,
+              }}
+            >
+              {this.props.children}
+            </SiteContext.Provider>
           )
         }}
-        </StaticQuery>
+      </StaticQuery>
     )
   }
 }
 
-export {
-  SiteContext,
-  ContextProviderComponent
-}
+export { SiteContext, ContextProviderComponent }
+
