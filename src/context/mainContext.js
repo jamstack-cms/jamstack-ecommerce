@@ -10,7 +10,7 @@ const mainQuery = graphql`
   }
 `
 
-const STORAGE_KEY = 'GATSBY_ECOMMERCE_STARTER_'
+const STORAGE_KEY = process.env.STORAGE_KEY; //'GATSBY_ECOMMERCE_STARTER_'
 
 const initialState = {
   cart: [],

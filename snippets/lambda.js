@@ -1,5 +1,5 @@
 // https://stripe.com/docs/payments/without-card-authentication
-const stripe = require("stripe")("API_KEY")
+const stripe = require("stripe")(process.env.STRIPE_API_KEY); //"API_KEY"
 
 exports.handler = async event => {
   if (!event.body || event.httpMethod !== "POST") {
