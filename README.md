@@ -44,12 +44,12 @@ This project is styled using Tailwind. To learn more how this works, check out t
 
 The main files, components, and images you may want to change / modify are:
 
-__Logo__ - src/images/logo.png
-__Buttons, Nav, Header__ - src/components
-__Form components__ - src/components/formComponents
-__Context (state)__ - src/context/mainContext.js
-__Pages (admin, cart, checkout, index)__ - src/pages
-__Templates (category view, single item view, inventory views)__ - src/templates
+__Logo__ - src/images/logo.png   
+__Buttons, Nav, Header__ - src/components   
+__Form components__ - src/components/formComponents   
+__Context (state)__ - src/context/mainContext.js   
+__Pages (admin, cart, checkout, index)__ - src/pages   
+__Templates (category view, single item view, inventory views)__ - src/templates   
 
 ### How it works
 
