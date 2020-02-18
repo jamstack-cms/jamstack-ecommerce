@@ -36,6 +36,8 @@ $ gatsby develop
 $ gatsby build
 ```
 
+## About the project
+
 ### Tailwind
 
 This project is styled using Tailwind. To learn more how this works, check out the Tailwind documentation [here](https://tailwindcss.com/docs).
