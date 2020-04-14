@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Earth Supply - shop`,
     description: `your  E Commerce Website.`,
-    author: `@flotek`,
+    author: `@gatsbify.site`,
   },
   plugins: [
     {

@@ -1,4 +1,4 @@
-import inventory from './inventory';
+import inventory from "./inventory"
 
 /*
 Inventory items must adhere to the following schema:
@@ -22,6 +22,6 @@ async function getInventory() {
   })
 }
 
-const DENOMINATION = '$'
+const DENOMINATION = "R"
 
-export { DENOMINATION, getInventory as default } 
+export { DENOMINATION, getInventory as default }

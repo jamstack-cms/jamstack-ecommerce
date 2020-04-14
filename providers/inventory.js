@@ -12,7 +12,7 @@ let inventory = [
     currentInventory: 4,
   },
   {
-    categories: ["salt lamp"],
+    categories: ["new arrivals", "salt lamp"],
     name: "Natural Lamp",
     price: "360",
     image: "../images/products/naturallamp.png",
@@ -22,7 +22,7 @@ let inventory = [
     currentInventory: 2,
   },
   {
-    categories: ["new arrivals", "salt lamp"],
+    categories: ["salt lamp"],
     name: "Detox Lamp",
     price: "480",
     image: "../images/products/detoxlamp.png",
