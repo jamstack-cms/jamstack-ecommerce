@@ -2,7 +2,7 @@ import uuid from "uuid/v4"
 
 let inventory = [
   {
-    categories: ["new arrivals", "salt lamp"],
+    categories: ["salt lamp"],
     name: "Pyramid Lamp",
     price: "490",
     image: "../images/products/pyramidlamp.png",
