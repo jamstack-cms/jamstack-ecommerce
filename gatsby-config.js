@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby JAMstack ECommerce Professional`,
-    description: `Get up and running with your next E Commerce Website.`,
-    author: `@dabit3`,
+    title: `Earth Supply - shop`,
+    description: `your  E Commerce Website.`,
+    author: `@flotek`,
   },
   plugins: [
     {
@@ -47,6 +47,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
