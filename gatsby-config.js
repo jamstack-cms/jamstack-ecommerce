@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `earthsupply.co.za`,
-        short_name: `starter`,
+        short_name: `ES-App`,
         start_url: `/`,
         background_color: `#feb035`,
         theme_color: `#febf55`,
