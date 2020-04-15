@@ -100,7 +100,7 @@ class Layout extends React.Component {
                     </span>
                     <div className="flex flex-1 justify-end">
                       <Link to="/admin">
-                        <p className="pt-4 text-xs">Admins</p>
+                        <p className="pt-4 text-xs">Admin</p>
                       </Link>
                     </div>
                   </div>
