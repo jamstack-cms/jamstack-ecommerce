@@ -213,7 +213,7 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 .bg-light {
-  background-color: #facd7c26;
+  background-color: #f7dccf46;
 }
 
 img {
@@ -628,5 +628,5 @@ pre tt:after {
   }
 }
 .bg-green-200 {
-  background: #feebc8;
+  background: #f5c5b160;
 }
