@@ -5,7 +5,7 @@ let inventory = [
     categories: ["salt lamp"],
     name: "Pyramid Lamp",
     price: "490",
-    image: "../images/products/pyramidlamp.png",
+    image: "../images/products/pyramidlamp.webp",
     description:
       "This lamp is cut in a unique pyramid shape ans available in medium and large. Ionic Air Purifier with on/off cord and a solid wooden base",
     brand: "Earth Supply",
@@ -15,7 +15,7 @@ let inventory = [
     categories: ["new arrivals", "salt lamp"],
     name: "Natural Lamp",
     price: "360",
-    image: "../images/products/naturallamp.png",
+    image: "../images/products/naturallamp.webp",
     description:
       "Salt Lamps are fantastic for improving the air quality in your home and aid in relieving symptoms of breathing difficulties and numerous health concerns. They look fantastic in any home or office. All electric Himalayan Salt Lamps come with a standard cord & bulb. Available in sizes ranging from 2 - 60kg",
     brand: "Earth Supply",
@@ -25,7 +25,7 @@ let inventory = [
     categories: ["salt lamp"],
     name: "Detox Lamp",
     price: "480",
-    image: "../images/products/detoxlamp.png",
+    image: "../images/products/detoxlamp.webp",
     description:
       "Gently exfoliate the skin as it binds with the salt through moisture on your hands and feet.",
     brand: "Earth Supply",
@@ -35,7 +35,7 @@ let inventory = [
     categories: ["new arrivals", "salt lamp"],
     name: "Massage Lamp",
     price: "550",
-    image: "../images/products/massagelamp.png",
+    image: "../images/products/massagelamp.webp",
     description:
       "Handmade massage stones will loosen tensed muscles and soothe aches and pain when rubbed/rolled over sore muscles",
     brand: "Earth Supply",
@@ -45,7 +45,7 @@ let inventory = [
     categories: ["salt lamp"],
     name: "Heart Lamp",
     price: "470",
-    image: "../images/products/heartlamp.png",
+    image: "../images/products/heartlamp.webp",
     description:
       "This lamp is handcrafted and an excellent gift to a loved one.",
     brand: "Earth Supply",
@@ -55,7 +55,7 @@ let inventory = [
     categories: ["on sale", "salt lamp"],
     name: "Aroma Lamp",
     price: "420",
-    image: "../images/products/aromalamp.png",
+    image: "../images/products/aromalamp.webp",
     description:
       "These lamps acts as air purifiers by emitting negative ions into the air and is stress reliever",
     brand: "Earth Supply",
@@ -65,7 +65,7 @@ let inventory = [
     categories: ["on sale", "salt lamp"],
     name: "Fire Bowl Lamp M",
     price: "400",
-    image: "../images/products/firebowl.png",
+    image: "../images/products/firebowl.webp",
     description:
       "These handmade stones and warming bowl will loosen tensed muscles also soothe aches and pains when rubbed over sore muscles",
     brand: "Earth Supply",
@@ -75,7 +75,7 @@ let inventory = [
     categories: ["salt lamp"],
     name: "Fire Bowl Lamp L",
     price: "450",
-    image: "../images/products/firebowl.png",
+    image: "../images/products/firebowl.webp",
     description:
       "These handmade stones and warming bowl will loosen tensed muscles also soothe aches and pains when rubbed over sore muscles",
     brand: "Earth Supply",
@@ -85,7 +85,7 @@ let inventory = [
     categories: ["kitchen", "on sale"],
     name: "Edible Salt",
     price: "50",
-    image: "../images/products/ediblesalt.png",
+    image: "../images/products/ediblesalt.webp",
     description: "Jimalayan Pink Salt, fine or coarse. Available in bulk sizes",
     brand: "Earth Supply",
     currentInventory: 24,
@@ -94,7 +94,7 @@ let inventory = [
     categories: ["kitchen", "on sale"],
     name: "Coarse Salt",
     price: "50",
-    image: "../images/products/ediblesalt.png",
+    image: "../images/products/ediblesalt.webp",
     description:
       "Jimalayan Pink Salt, fine or coarse. Available in bulk sizes.",
     brand: "Earth Supply",
@@ -105,7 +105,7 @@ let inventory = [
     categories: ["new arrivals", "kitchen"],
     name: "Shot Glasses",
     price: "350",
-    image: "../images/products/shotglasses.png",
+    image: "../images/products/shotglasses.webp",
     description:
       "Surprise your guests with this unique party trick! Hand carved salt glasses. Excellent with shooters, tequila and infused drinks",
     brand: "Earth Supply",
@@ -115,7 +115,7 @@ let inventory = [
     categories: ["new arrivals", "kitchen"],
     name: "Mortar and Pistol M",
     price: "260",
-    image: "../images/products/mortarpestle.png",
+    image: "../images/products/mortarpestle.webp",
     description:
       "Use it as a Pestle and Mortar or as a chilled serving bowl for salads, ice cream or cold dishes",
     brand: "Earth Supply",
@@ -125,7 +125,7 @@ let inventory = [
     categories: ["kitchen"],
     name: "Mortar and Pistol L",
     price: "400",
-    image: "../images/products/mortarpestle.png",
+    image: "../images/products/mortarpestle.webp",
     description:
       "Use it as a Pestle and Mortar or as a chilled serving bowl for salads, ice cream or cold dishes",
     brand: "Earth Supply",
@@ -135,7 +135,7 @@ let inventory = [
     categories: ["salt blocks"],
     name: "Blocks 8x8x2",
     price: "280",
-    image: "../images/products/saltblocks.png",
+    image: "../images/products/saltblocks.webp",
     description:
       "Himalayan Salt Blocks offer a healthy and unique cooking experience for both meat and vegetables. Himalayan Salt Blocks and Trays come in a range of sizes and are easy to cook on and maintained",
     brand: "Earth Supply",
@@ -145,7 +145,7 @@ let inventory = [
     categories: ["salt blocks"],
     name: "Blocks 10x8x1.5",
     price: "350",
-    image: "../images/products/saltblocks.png",
+    image: "../images/products/saltblocks.webp",
     description:
       "Himalayan Salt Blocks offer a healthy and unique cooking experience for both meat and vegetables. Himalayan Salt Blocks and Trays come in a range of sizes and are easy to cook on and maintained",
     brand: "Earth Supply",
@@ -156,7 +156,7 @@ let inventory = [
     categories: ["salt blocks"],
     name: "Blocks 12x8x1.5",
     price: "400",
-    image: "../images/products/saltblocks.png",
+    image: "../images/products/saltblocks.webp",
     description:
       "Himalayan Salt Blocks offer a healthy and unique cooking experience for both meat and vegetables. Himalayan Salt Blocks and Trays come in a range of sizes and are easy to cook on and maintained",
     brand: "Earth Supply",
@@ -166,7 +166,7 @@ let inventory = [
     categories: ["salt blocks"],
     name: "Blocks 12x8x2",
     price: "450",
-    image: "../images/products/saltblocks.png",
+    image: "../images/products/saltblocks.webp",
     description:
       "Himalayan Salt Blocks offer a healthy and unique cooking experience for both meat and vegetables. Himalayan Salt Blocks and Trays come in a range of sizes and are easy to cook on and maintained",
     brand: "Earth Supply",
@@ -176,7 +176,7 @@ let inventory = [
     categories: ["salt blocks"],
     name: "Blocks 16x8x2",
     price: "600",
-    image: "../images/products/saltblocks.png",
+    image: "../images/products/saltblocks.webp",
     description:
       "Himalayan Salt Blocks offer a healthy and unique cooking experience for both meat and vegetables. Himalayan Salt Blocks and Trays come in a range of sizes and are easy to cook on and maintained",
     brand: "Earth Supply",
@@ -186,7 +186,7 @@ let inventory = [
     categories: ["trays"],
     name: "Trays 10x8x1.5",
     price: "270",
-    image: "../images/products/saltblocks.png",
+    image: "../images/products/saltblocks.webp",
     description:
       "Himalayan Salt Blocks offer a healthy and unique cooking experience for both meat and vegetables. Himalayan Salt Blocks and Trays come in a range of sizes and are easy to cook on and maintained",
     brand: "Earth Supply",
@@ -196,7 +196,7 @@ let inventory = [
     categories: ["trays"],
     name: "Trays M",
     price: "300",
-    image: "../images/products/saltblocks.png",
+    image: "../images/products/saltblocks.webp",
     description:
       "Himalayan Salt Blocks offer a healthy and unique cooking experience for both meat and vegetables. Himalayan Salt Blocks and Trays come in a range of sizes and are easy to cook on and maintained",
     brand: "Earth Supply",
@@ -206,7 +206,7 @@ let inventory = [
     categories: ["trays"],
     name: "Trays L",
     price: "350",
-    image: "../images/products/saltblocks.png",
+    image: "../images/products/saltblocks.webp",
     description:
       "Himalayan Salt Blocks offer a healthy and unique cooking experience for both meat and vegetables. Himalayan Salt Blocks and Trays come in a range of sizes and are easy to cook on and maintained",
     brand: "Earth Supply",
@@ -216,7 +216,7 @@ let inventory = [
     categories: ["on sale", "wellness"],
     name: "Massage Roller",
     price: "120",
-    image: "../images/products/split.png",
+    image: "../images/products/split.webp",
     description: "Energising for presurpoints in relieving stress and pain.",
     brand: "Earth Supply",
     currentInventory: 13,
@@ -225,7 +225,7 @@ let inventory = [
     categories: ["on sale", "wellness"],
     name: "Body Scrubber",
     price: "120",
-    image: "../images/products/split.png",
+    image: "../images/products/split.webp",
     description: "Treat and clean your skin without clogging pores.",
     brand: "Earth Supply",
     currentInventory: 13,
@@ -234,7 +234,7 @@ let inventory = [
     categories: ["wellness"],
     name: "Candle Holder",
     price: "120",
-    image: "../images/products/split.png",
+    image: "../images/products/split.webp",
     description: "Perfect for any room to create ambiance and serenity.",
     brand: "Earth Supply",
     currentInventory: 33,
@@ -243,7 +243,7 @@ let inventory = [
     categories: ["on sale", "wellness"],
     name: "Bath Crystals",
     price: "80",
-    image: "../images/products/bathcrystals.png",
+    image: "../images/products/bathcrystals.webp",
     description: "Treat and clean your skin without clogging pores.",
     brand: "Earth Supply",
     currentInventory: 33,
@@ -252,7 +252,7 @@ let inventory = [
     categories: ["on sale", "wellness"],
     name: "Pineapple Body Scrubber",
     price: "80",
-    image: "../images/products/pscrubber.png",
+    image: "../images/products/pscrubber.webp",
     description:
       "Pinapple flavored scrub. Treat and clean your skin without clogging pores.",
     brand: "Jason Bourne",
