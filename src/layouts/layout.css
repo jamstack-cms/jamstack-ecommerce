@@ -191,7 +191,9 @@ html {
 }
 * {
   box-sizing: inherit;
-  font-family: Eina -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+  font-family: Eina -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
 *:before {
   box-sizing: inherit;
@@ -210,6 +212,7 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+
 img {
   max-width: 100%;
   margin-left: 0;
@@ -620,4 +623,7 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+.bg-green-200 {
+  background: #feebc8;
 }

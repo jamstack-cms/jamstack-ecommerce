@@ -1,8 +1,6 @@
 const colors = {
-  primary: '#000000',
-  secondary: '#00baa6'
+  primary: "#feb035",
+  secondary: "#00baa6",
 }
 
-export {
-  colors
-}
+export { colors }
