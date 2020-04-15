@@ -202,7 +202,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: #fd9c36;
+  color: #e6841c;
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -211,6 +211,9 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+}
+.bg-light {
+  background-color: #facd7c26;
 }
 
 img {
