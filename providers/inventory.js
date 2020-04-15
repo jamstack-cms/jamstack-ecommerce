@@ -255,7 +255,7 @@ let inventory = [
     image: "../images/products/pscrubber.webp",
     description:
       "Pinapple flavored scrub. Treat and clean your skin without clogging pores.",
-    brand: "Jason Bourne",
+    brand: "Earth Supply",
     currentInventory: 33,
   },
   // {
