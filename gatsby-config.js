@@ -39,8 +39,8 @@ module.exports = {
         name: `earthsupply.co.za`,
         short_name: `ES-App`,
         start_url: `/`,
-        background_color: `#feb035`,
-        theme_color: `#febf55`,
+        background_color: `#e6841c`,
+        theme_color: `#e6841c`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
