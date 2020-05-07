@@ -1,5 +1,5 @@
 import React from 'react'
-import Popup from "reactjs-popup"
+import Popup from 'reactjs-popup'
 
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import CartLink from '../components/CartLink'
