@@ -32,15 +32,16 @@ class Layout extends React.Component {
           context => {
             console.log('baselayout rerendering...')
             let { navItems: { navInfo: { data: links }}} = context
-    
-            links = links.map(link => {
-              const newLink = {}
-              newLink.link = slugify(link)
-              newLink.name = titleIfy(link)
-              return newLink
+
+            links = links.map(link => ({
+              name: titleIfy(link),
+              link: slugify(link)
+            }));
+            links.unshift({
+              name: 'Home',
+              link: '/'
             })
-        
-            links.unshift({ name: 'Home', link: '/'})
+
             return (
               <div className="min-h-screen">
                 <nav>

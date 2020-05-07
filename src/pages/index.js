@@ -1,6 +1,6 @@
 import React from "react"
 
-import SEO from "../components/seo" 
+import SEO from "../components/seo"
 import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
 import CartLink from '../components/CartLink'
 import { titleIfy, slugify } from '../../utils/helpers'
@@ -55,11 +55,11 @@ const Home = ({ data: gqlData }) => {
       </div>
       <div className="my-8 flex flex-col lg:flex-row justify-between">
         <DisplaySmall imageSrc={inventory[0].image} title={inventory[0].name} subtitle={inventory[0].categories[0]} link={slugify(inventory[0].name)} />
-        
+
         <DisplaySmall imageSrc={inventory[1].image} title={inventory[1].name} subtitle={inventory[1].categories[0]} link={slugify(inventory[1].name)} />
-        
+
         <DisplaySmall imageSrc={inventory[2].image} title={inventory[2].name} subtitle={inventory[2].categories[0]} link={slugify(inventory[2].name)} />
-        
+
         <DisplaySmall imageSrc={inventory[3].image} title={inventory[3].name} subtitle={inventory[3].categories[0]} link={slugify(inventory[3].name)} />
       </div>
     </>
