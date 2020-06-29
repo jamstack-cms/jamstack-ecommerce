@@ -106,6 +106,9 @@ module.exports = {
         'xxs': '.6rem',
         'smaller': '.8rem'
       },
+      padding: {
+        ".5": ".125rem"
+      },
       maxWidth: {
         "48":"12rem",
         "52":"13rem",
