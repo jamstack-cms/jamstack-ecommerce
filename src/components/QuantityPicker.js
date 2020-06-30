@@ -6,7 +6,7 @@ export default function QuantityPicker({
   return (
     <div className={`flex items-center`}>
       {
-        hideQuantityLabel && (
+        !hideQuantityLabel && (
           <div className="px-2 text-xs">QUANTITY</div>
         )
       }

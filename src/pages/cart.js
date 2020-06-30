@@ -10,7 +10,6 @@ import { slugify } from '../../utils/helpers'
 import Image from '../components/Image'
 
 const Cart = ({ context }) => {
-  console.log({ context })
   const {
     numberOfItemsInCart, cart, removeFromCart, total, setItemQuantity
   } = context
@@ -64,7 +63,6 @@ const Cart = ({ context }) => {
                             </Link>
                             <div className="ml-4">
                               <QuantityPicker
-                                hideQuantityLabel
                                 numberOfitems={item.quantity}
                                 increment={() => increment(item)}
                                 decrement={() => decrement(item)}
@@ -97,6 +95,7 @@ const Cart = ({ context }) => {
                               </Link>
                               <div className="ml-6 mt-4 mb-2">
                                 <QuantityPicker
+                                  hideQuantityLabel
                                   numberOfitems={item.quantity}
                                   increment={() => increment(item)}
                                   decrement={() => decrement(item)}

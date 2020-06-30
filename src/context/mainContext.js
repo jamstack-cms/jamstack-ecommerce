@@ -42,7 +42,6 @@ class ContextProviderComponent extends React.Component {
   setItemQuantity = (item) => {
     const storageState = JSON.parse(window.localStorage.getItem(STORAGE_KEY))
     const { cart } = storageState
-    console.log({ cart })
     const index = cart.findIndex(cartItem => cartItem.id === item.id)
     cart[index].quantity = item.quantity
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
@@ -55,7 +54,6 @@ class ContextProviderComponent extends React.Component {
     const storageState = JSON.parse(window.localStorage.getItem(STORAGE_KEY))
     const { cart } = storageState
     if (cart.length) {
-      console.log({ cart })
       const index = cart.findIndex(cartItem => cartItem.id === item.id)
       if (index >= Number(0)) {
         cart[index].quantity = cart[index].quantity + item.quantity
@@ -99,7 +97,6 @@ class ContextProviderComponent extends React.Component {
         state = JSON.parse(storageState)
       }
     }
-    console.log('state: ', state)
 
     return (
       <StaticQuery query={mainQuery}>
