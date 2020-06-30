@@ -132,7 +132,6 @@ await Promise.all(
 
 ### Roadmap for V1
 
-- Add ability to specify quantities in cart
 - Auto dropdown navigation for large number of categories
 - Ability to add more / more configurable metadata to item details
 - Themeing + dark mode

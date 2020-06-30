@@ -56,11 +56,14 @@ class ContextProviderComponent extends React.Component {
     if (cart.length) {
       const index = cart.findIndex(cartItem => cartItem.id === item.id)
       if (index >= Number(0)) {
+        /* If this item is already in the cart, update the quantity */
         cart[index].quantity = cart[index].quantity + item.quantity
       } else {
+        /* If this item is not yet in the cart, add it */
         cart.push(item)
       }
     } else {
+      /* If no items in the cart, add the first item. */
       cart.push(item)
     }
 
