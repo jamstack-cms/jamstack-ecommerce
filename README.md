@@ -36,6 +36,11 @@ $ gatsby develop
 $ gatsby build
 ```
 
+## 1 Click deploy to Amplify Hosting
+
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/jamstack-cms/jamstack-ecommerce)
+
+
 ## About the project
 
 ### Tailwind
