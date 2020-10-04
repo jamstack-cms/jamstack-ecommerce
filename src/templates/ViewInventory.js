@@ -1,8 +1,8 @@
 import React from 'react'
-import getInventory, { DENOMINATION } from '../../providers/inventoryProvider'
+import getInventory from '../../providers/inventoryProvider'
 import Image from '../components/Image'
 import { Link } from 'gatsby'
-import { slugify } from '../../utils/helpers'
+import { slugify, numberFormat } from '../../utils/helpers'
 import { FaTimes } from 'react-icons/fa'
 
 class ViewInventory extends React.Component {
@@ -101,7 +101,7 @@ class ViewInventory extends React.Component {
                   <div className="flex flex-1 justify-end">
                     <p className="m-0 pl-10 text-gray-900 tracking-tighter text-sm">In stock: {item.currentInventory}</p>
                     <p className="m-0 pl-20 text-gray-900 tracking-tighter font-semibold">
-                      {DENOMINATION + item.price}
+                      {numberFormat(item.price)}
                     </p>
                   </div>
                   <div className="flex items-center m-0 ml-10 text-gray-900 text-s cursor-pointer">

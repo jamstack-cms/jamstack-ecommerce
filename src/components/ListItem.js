@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { DENOMINATION } from '../../providers/inventoryProvider'
+import { numberFormat } from '../../utils/helpers'
 import Image from './Image'
 
 const ListItem = ({ link, title, imageSrc, price }) =>  (
@@ -19,7 +19,7 @@ const ListItem = ({ link, title, imageSrc, price }) =>  (
     </Link>
     <div>
       <p className="m-4 text-center text-l font-semibold mb-1">{title}</p>
-      <p className="text-center text-xs text-gray-700 mb-4">{`${DENOMINATION}${price}`}</p>
+      <p className="text-center text-xs text-gray-700 mb-4">{numberFormat(price)}</p>
     </div>
   </div>
 )
