@@ -30,6 +30,13 @@ function getTrimmedString(string, length = 8) {
   }
 }
 
+function numberFormat(number) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(number);
+}
+
 export {
-  slugify, titleIfy, getTrimmedString
+  slugify, titleIfy, getTrimmedString, numberFormat
 }
