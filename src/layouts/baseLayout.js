@@ -58,7 +58,7 @@ class Layout extends React.Component {
                         {
                           links.map((l, i) => (
                             <Link to={`/${l.link}`} key={i}>
-                              <p key={i} className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.link}</p>
+                              <p key={i} className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.name}</p>
                             </Link>
                           ))
                         }
