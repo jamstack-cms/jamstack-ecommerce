@@ -1,30 +1,66 @@
-import uuid from 'uuid/v4'
+import uuid from "uuid/v4"
 
 let inventory = [
-  { categories: ['new arrivals'], name: 'Timber Gray Sofa', price: '1000', image: '../images/products/couch1.png', description: 'Stay a while. The Timber charme chocolat sofa is set atop an oak trim and flaunts fluffy leather back and seat cushions. Over time, this brown leather sofa’s full-aniline upholstery will develop a worn-in vintage look. Snuggle up with your cutie (animal or human) and dive into a bowl of popcorn. This sofa is really hard to leave. Natural color variations, wrinkles and creases are part of the unique characteristics of this leather. It will develop a relaxed vintage look with regular use.', brand: 'Jason Bourne', currentInventory: 4 },
-    { categories: ['sofas', 'living room'], name: 'Carmel Brown Sofa', price: '1000', image: '../images/products/couch5.png', description: 'Stay a while. The Timber charme chocolat sofa is set atop an oak trim and flaunts fluffy leather back and seat cushions. Over time, this brown leather sofa’s full-aniline upholstery will develop a worn-in vintage look. Snuggle up with your cutie (animal or human) and dive into a bowl of popcorn. This sofa is really hard to leave. Natural color variations, wrinkles and creases are part of the unique characteristics of this leather. It will develop a relaxed vintage look with regular use.' , brand: 'Jason Bourne' , currentInventory: 2 },
-  { categories: ['new arrivals', 'sofas'], name: 'Mod Leather Sofa', price: '800', image: '../images/products/couch6.png', description: 'Easy to love. The Sven in birch ivory looks cozy and refined, like a sweater that a fancy lady wears on a coastal vacation. This ivory loveseat has a tufted bench seat, loose back pillows and bolsters, solid walnut legs, and is ready to make your apartment the adult oasis you dream of. Nestle it with plants, an ottoman, an accent chair, or 8 dogs. Your call.', brand: 'Jason Bourne', currentInventory: 8 },
-  { categories: ['new arrivals', 'sofas'], name: 'Thetis Gray Love Seat', price: '900', image: '../images/products/couch7.png', description: 'You know your dad’s incredible vintage bomber jacket? The Nirvana dakota tan leather sofa is that jacket, but in couch form. With super-plush down-filled cushions, a corner-blocked wooden frame, and a leather patina that only gets better with age, the Nirvana will have you looking cool and feeling peaceful every time you take a seat. Looks pretty great with a sheepskin throw, if we may say so. With use, this leather will become softer and more wrinkled and the cushions will take on a lived-in look, like your favorite leather jacket.' , brand: 'Jason Bourne', currentInventory: 10},
-  { categories: ['on sale', 'sofas'], name: 'Sven Tan Matte', price: '1200', image: '../images/products/couch8.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', brand: 'Jason Bourne' , currentInventory: 7 },
-  { categories: ['on sale', 'sofas'], name: 'Otis Malt Sofa', price: '500', image: '../images/products/couch9.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.' , brand: 'Jason Bourne', currentInventory: 13},
-  { categories: ['on sale', 'sofas'], name: 'Ceni Brown 3 Seater', price: '650', image: '../images/products/couch10.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.' , brand: 'Jason Bourne', currentInventory: 9},
-  { categories: ['sofas', 'living room'], name: 'Jameson Jack Lounger', price: '1230', image: '../images/products/couch11.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', brand: 'Jason Bourne', currentInventory: 24 },
-
-  { categories: ['sofas'], name: 'Galaxy Blue Sofa', price: '800', image: '../images/products/couch2.png', description: 'Easy to love. The Sven in birch ivory looks cozy and refined, like a sweater that a fancy lady wears on a coastal vacation. This ivory loveseat has a tufted bench seat, loose back pillows and bolsters, solid walnut legs, and is ready to make your apartment the adult oasis you dream of. Nestle it with plants, an ottoman, an accent chair, or 8 dogs. Your call.', brand: 'Jason Bourne', currentInventory: 43 },
-  { categories: ['new arrivals', 'sofas'], name: 'Markus Green Love Seat', price: '900', image: '../images/products/couch3.png', description: 'You know your dad’s incredible vintage bomber jacket? The Nirvana dakota tan leather sofa is that jacket, but in couch form. With super-plush down-filled cushions, a corner-blocked wooden frame, and a leather patina that only gets better with age, the Nirvana will have you looking cool and feeling peaceful every time you take a seat. Looks pretty great with a sheepskin throw, if we may say so. With use, this leather will become softer and more wrinkled and the cushions will take on a lived-in look, like your favorite leather jacket.', brand: 'Jason Bourne' , currentInventory: 2},
-  { categories: ['on sale', 'sofas'], name: 'Dabit Matte Black', price: '1200', image: '../images/products/couch4.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', currentInventory: 14 },
-
-  { categories: ['on sale', 'chairs'], name: 'Embrace Blue', price: '300', image: '../images/products/chair1.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.' , brand: 'Jason Bourne', currentInventory: 12 },
-  { categories: ['on sale', 'chairs'], name: 'Nord Lounger', price: '825', image: '../images/products/chair2.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.' , brand: 'Jason Bourne', currentInventory: 13},
-  { categories: ['on sale', 'chairs'], name: 'Ceni Matte Oranve', price: '720', image: '../images/products/chair3.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.' , brand: 'Jason Bourne', currentInventory: 33},
-  { categories: ['on sale', 'chairs'], name: 'Abisko Green Recliner', price: '2000', image: '../images/products/chair4.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', brand: 'Jason Bourne', currentInventory: 23 },
-  { categories: ['on sale', 'chairs'], name: 'Denim on Denim Single', price: '1100', image: '../images/products/chair5.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.' , brand: 'Jason Bourne', currentInventory: 13},
-  { categories: ['on sale', 'chairs'], name: 'Levo Tan Lounge Chair', price: '600', image: '../images/products/chair6.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', brand: 'Jason Bourne', currentInventory: 15 },
-
-  { categories: ['on sale', 'chairs'], name: 'Anime Tint Recliner', price: '775', image: '../images/products/chair7.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', brand: 'Jason Bourne', currentInventory: 44 },
-  { categories: ['on sale', 'chairs'], name: 'Josh Jones Red Chair', price: '1200', image: '../images/products/chair8.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', brand: 'Jason Bourne', currentInventory: 17 },
-  { categories: ['on sale', 'chairs'], name: 'Black Sand Lounge', price: '1600', image: '../images/products/chair9.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', brand: 'Jason Bourne', currentInventory: 28 },
-  { categories: ['on sale', 'chairs'], name: 'Mint Beige Workchair', price: '550', image: '../images/products/chair10.png', description: 'You don’t have to go outside to be rugged. The Cigar rawhide sofa features a sturdy corner-blocked wooden frame and raw seams for that Malboro-person look. This brown leather sofa is cozy in a cottage, cabin, or a condo. And the leather (the leather!) becomes more beautiful with use: subtle character markings such as insect bites, healed scars, and grain variation reflects a real vintage. Saddle up and pass the remote.', brand: 'Jason Bourne', currentInventory: 31 },  // { 
+  {
+    categories: ["new arrivals", "DJI"],
+    name: "PHANTOM 4 RTK",
+    price: "1000",
+    image: "../images/products/phantom-4-rtk.png",
+    description:
+      "Visionary Intelligence. Elevated Accuracy. Upgrade your next mapping mission with the Phantom 4 RTK – the most compact and accurate low altitude mapping solution.",
+    brand: "DJI",
+    currentInventory: 4,
+  },
+  {
+    categories: ["new arrivals", "DJI"],
+    name: "Matrice 200 Series V2",
+    price: "1000",
+    image: "../images/products/matrice-200-series-v2.png",
+    description:
+      "Built to Endure. Engineered to Adapt. The ultimate platform for aerial productivity combines a rugged design and simple configurability to work as a solution for a variety of industrial applications. Improvements to the M200 Series V2 enhance intelligent control systems, flight performance, and add flight safety and data security features.",
+    brand: "DJI",
+    currentInventory: 2,
+  },
+  {
+    categories: ["new arrivals", "YUNEEC"],
+    name: "H520",
+    price: "800",
+    image: "../images/products/h520.png",
+    description:
+      "Commercial aerial solution. The H520 system utilizes Yuneec’s proven six-rotor platform and incorporates enterprise-grade cameras and mission planning software for high-end commercial use. The sUAS is the perfect solution for long flight times and a proven and robust technology in an all-in-one package. The H520 is built for inspection, law enforcement, security, construction, surveying, and mapping applications in addition to offering cinematic imaging payload systems.",
+    brand: "YUNEEC",
+    currentInventory: 8,
+  },
+  {
+    categories: ["new arrivals", "senseFly"],
+    name: "eBee X",
+    price: "900",
+    image: "../images/products/ebee-x.png",
+    description:
+      "Map Without Limits. The eBee X is the fixed-wing drone for all your mapping needs. Designed to boost the quality, efficiency and safety of your data collection, it has a camera to suit every job, the accuracy and coverage to meet every project’s requirements, and can work virtually every type of site.",
+    brand: "senseFly",
+    currentInventory: 10,
+  },
+  {
+    categories: ["new arrivals", "senseFly"],
+    name: "eBee Plus",
+    price: "1200",
+    image: "../images/products/ebee-plus.png",
+    description:
+      "Why choose the eBee Plus? The eBee Plus survey drone is a large-coverage photogrammetric mapping system featuring RTK/PPK upgradeability, for survey-grade accuracy on demand.",
+    brand: "senseFly",
+    currentInventory: 7,
+  },
+  {
+    categories: ["new arrivals", "Hélicéo"],
+    name: "Fox4",
+    price: "500",
+    image: "../images/products/fox4.png",
+    description:
+      "The smart drone for mapping and inspection. The Fox4 is a multirotor drone with 4 carbon blades. Its light structure and engine allow for extreme maneuverability with manual piloting. Designed for automatic photogrammetry missions up to 1.5 km², Fox4 may also carry out missions for inspection of infrastructure, structures, network lines or industrial sites, in automatic or manual mode.",
+    brand: "Hélicéo",
+    currentInventory: 13,
+  },
 ]
 
 inventory.map(i => {
