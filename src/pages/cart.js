@@ -51,10 +51,10 @@ const Cart = ({ context }) => {
 
                           { /* Responsive - Desktop */}
                           <div className="flex items-center hidden md:flex">
-                            <Link to={slugify(item.name)}>
+                            <Link to={`/${slugify(item.name)}`}>
                               <Image className="w-32 m-0" src={item.image} alt={item.name} />
                             </Link>
-                            <Link to={slugify(item.name)}>
+                            <Link to={`/${slugify(item.name)}`}>
                               <p className="
                               m-0 pl-10 text-gray-600 text-sm w-56
                               ">
@@ -82,11 +82,11 @@ const Cart = ({ context }) => {
 
                           { /* Responsive - Mobile */}
                           <div className="flex items-center flex md:hidden">
-                            <Link to={slugify(item.name)}>
+                            <Link to={`/${slugify(item.name)}`}>
                               <Image className="w-32 m-0" src={item.image} alt={item.name} />
                             </Link>
                             <div>
-                              <Link to={slugify(item.name)}>
+                              <Link to={`/${slugify(item.name)}`}>
                                 <p className="
                                 m-0 pl-6 text-gray-600 text-base
                                 ">

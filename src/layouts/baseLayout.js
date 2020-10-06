@@ -57,8 +57,8 @@ class Layout extends React.Component {
                       <div className="flex flex-wrap">
                         {
                           links.map((l, i) => (
-                            <Link to={l.link} key={i}>
-                              <p key={i} className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.name}</p>
+                            <Link to={`/${l.link}`} key={i}>
+                              <p key={i} className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.link}</p>
                             </Link>
                           ))
                         }
