@@ -1,0 +1,27 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Eina";
+  src: url("/fonts/Eina.otf");
+}
+
+
+@font-face {
+  font-family: "Eina Light";
+  src: url("/fonts/Eina-Light.otf");
+}
+
+@font-face {
+  font-family: "Eina SemiBold";
+  src: url("/fonts/Eina-SemiBold.otf");
+}
+
+@layer base {
+  p, h1, h2, h3, h4, h5 {
+    color: rgba(0, 0, 0, .8);
+    font-family: Eina;
+  }
+}
