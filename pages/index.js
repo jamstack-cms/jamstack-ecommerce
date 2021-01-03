@@ -1,18 +1,17 @@
-import { Center, Footer, Tag, Showcase, /* DisplaySmall, DisplayMedium */ } from '../components'
+import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
 import CartLink from '../components/CartLink'
-import { /* titleIfy */ slugify } from '../utils/helpers'
+import { titleIfy, slugify } from '../utils/helpers'
 import fetchInventory from '../utils/inventoryProvider'
 
-const Home = ({ inventoryData = [] }) => {
-  console.log('inventoryData: ', inventoryData)
-  // const categories = data.slice(0, 2)
+const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
   const inventory = inventoryData.slice(0, 4)
+  const categories = categoryData.slice(0, 2)
 
   return (
     <>
       <CartLink />
       <div className="w-full">
-        <div className="bg-green-200
+        <div className="bg-blue-300
         lg:h-hero
         p-6 pb-10 smpb-6
         flex lg:flex-row flex-col">
@@ -40,9 +39,19 @@ const Home = ({ inventoryData = [] }) => {
           </div>
         </div>
       </div>
-      {/* <div className="my-4 lg:my-8 flex flex-col lg:flex-row justify-between">
-        <DisplayMedium imageSrc={categories[0].image} subtitle={`${categories[0].itemCount} items`} title={titleIfy(categories[0].name)} link={slugify(categories[0].name)} />
-        <DisplayMedium imageSrc={categories[1].image} subtitle={`${categories[1].itemCount} items`} title={titleIfy(categories[1].name)} link={slugify(categories[1].name)} />
+      <div className="my-4 lg:my-8 flex flex-col lg:flex-row justify-between">
+        <DisplayMedium
+          imageSrc={categories[0].image}
+          subtitle={`${categories[0].itemCount} items`}
+          title={titleIfy(categories[0].name)}
+          link={`/category/${slugify(categories[0].name)}`}
+        />
+        <DisplayMedium
+          imageSrc={categories[1].image}
+          subtitle={`${categories[1].itemCount} items`}
+          title={titleIfy(categories[1].name)}
+          link={`/category/${slugify(categories[1].name)}`}
+        />
       </div>
       <div className="pt-10 pb-6 flex flex-col items-center">
         <h2 className="text-4xl mb-3">Trending Now</h2>
@@ -56,18 +65,39 @@ const Home = ({ inventoryData = [] }) => {
         <DisplaySmall imageSrc={inventory[2].image} title={inventory[2].name} subtitle={inventory[2].categories[0]} link={slugify(inventory[2].name)} />
 
         <DisplaySmall imageSrc={inventory[3].image} title={inventory[3].name} subtitle={inventory[3].categories[0]} link={slugify(inventory[3].name)} />
-      </div> */}
+      </div>
     </>
   )
 }
 
 export async function getStaticProps() {
   const inventory = await fetchInventory()
-  console.log('inventory: ', inventory)
+  
+  const inventoryByCategory = inventory.reduce((acc, next) => {
+    const categories = next.categories
+
+    categories.forEach(c => {
+      const index = acc.findIndex(item => item.name === c)
+      if (index !== -1) {
+        const item = acc[index]
+        item.itemCount = item.itemCount + 1
+        acc[index] = item
+      } else {
+        const item = {
+          name: c,
+          image: next.image,
+          itemCount: 1
+        }
+        acc.push(item)
+      }
+    })
+    return acc
+  }, [])
+  
   return {
     props: {
       inventoryData: inventory,
-      text: "Hello"
+      categories: inventoryByCategory
     }
   }
 }

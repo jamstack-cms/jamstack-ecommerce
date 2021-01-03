@@ -8,10 +8,7 @@ async function fetchCategories () {
     })
     return acc
   }, [])
-  console.log('categories: ', categories)
   return Promise.resolve(categories)
 }
 
-export {
-  fetchCategories
-}
+export default fetchCategories

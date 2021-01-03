@@ -2,7 +2,7 @@ import React from 'react'
 
 import { titleIfy, slugify } from '../../utils/helpers'
 import { FaShoppingCart, FaCircle } from 'react-icons/fa';
-import { Link } from "gatsby"
+import Link from "next/link"
 
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 
@@ -22,8 +22,10 @@ class Nav extends React.Component {
       <div className="flex">
         {
           links.map((l, i) => (
-            <Link to={l.link} key={i}>
-              <p key={i} className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.name}</p>
+            <Link href={l.link} key={i}>
+              <a>
+               <p key={i} className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.name}</p>
+              </a>
             </Link>
           ))
         }

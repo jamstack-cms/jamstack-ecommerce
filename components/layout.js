@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
+import { slugify } from '../utils/helpers'
+
 
 export default function Layout({ children, categories }) {
   return (
@@ -11,7 +13,7 @@ export default function Layout({ children, categories }) {
             return (
               <div className="min-h-screen">
                 <nav>
-                  <div className="flex">
+                  <div className="flex justify-center">
                     <div className="
                     w-fw
                     mobile:px-12
@@ -33,7 +35,7 @@ export default function Layout({ children, categories }) {
                         </Link>
                         {
                           categories.map((category, index) => (
-                            <Link href={`/${category}`} key={index} className="mb-4 w-24 mw-24 sm:w-20 sm:mr-16">
+                            <Link href={`/category/${slugify(category)}`} key={index} className="mb-4 w-24 mw-24 sm:w-20 sm:mr-16">
                               <a>
                                 <p className="text-left m-0 text-smaller mr-4 sm:mr-8">
                                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -46,7 +48,9 @@ export default function Layout({ children, categories }) {
                     </div>
                   </div>
                 </nav>
-                {children}
+                <div className="mobile:px-10 px-4 pb-10 flex justify-center">
+                  <main className="w-fw">{children}</main>
+                </div>
                 <footer className="flex justify-center">
                   <div className="
                   flex w-fw px-12

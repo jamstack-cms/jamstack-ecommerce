@@ -50,6 +50,10 @@ module.exports = {
         '300': '300px',
         '400': '400px',
         '20': '20px',
+        '22': '22px',
+        '24': '24px',
+        '26': '26px',
+        '28': '28px',
         '30': '30px',
         '35': '35px',
         '40': '40px',
@@ -64,7 +68,7 @@ module.exports = {
         '60': '60px'
        },
        height: {
-         'hero': '600px',
+         'hero': '500px',
          "48":"12rem",
          "52":"13rem",
          "56":"14rem",
@@ -158,6 +162,13 @@ module.exports = {
         '-6': '-6',
         '-12': '-12',
        },
+       backgroundColor: {
+        'primary': '#000000',
+        'secondary': '#00baa6',
+        'light': '#f5f5f5',
+        'light-200': '#f0f0f0',
+        'light-300': '#e8e8e8'
+       }
     },
   },
   variants: {
