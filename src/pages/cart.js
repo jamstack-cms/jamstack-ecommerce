@@ -1,12 +1,11 @@
 import React from 'react'
 
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
-import { DENOMINATION } from '../../providers/inventoryProvider'
 import { FaTimes, FaLongArrowAltRight } from 'react-icons/fa'
 import { Link } from 'gatsby'
 import CartLink from '../components/CartLink'
 import QuantityPicker from '../components/QuantityPicker'
-import { slugify } from '../../utils/helpers'
+import { slugify, numberFormat } from '../../utils/helpers'
 import Image from '../components/Image'
 
 const Cart = ({ context }) => {
@@ -70,7 +69,7 @@ const Cart = ({ context }) => {
                             </div>
                             <div className="flex flex-1 justify-end">
                               <p className="m-0 pl-10 text-gray-900 tracking-tighter font-semibold">
-                                {DENOMINATION + item.price}
+                                {numberFormat(item.price)}
                               </p>
                             </div>
                             <div role="button" onClick={() => removeFromCart(item)} className="
@@ -103,7 +102,7 @@ const Cart = ({ context }) => {
                               </div>
                               <div className="flex flex-1">
                                 <p className="text-lg m-0 pl-6 pt-4 text-gray-900 tracking-tighter font-semibold">
-                                  {DENOMINATION + item.price}
+                                  {numberFormat(item.price)}
                                 </p>
                               </div>
                             </div>
@@ -123,7 +122,7 @@ const Cart = ({ context }) => {
           }
           <div className="flex flex-1 justify-end py-8">
             <p className="text-sm pr-10">Total</p>
-            <p className="font-semibold tracking-tighter">{DENOMINATION + total}</p>
+            <p className="font-semibold tracking-tighter">{numberFormat(total)}</p>
           </div>
           {!cartEmpty && (
             <Link to="/checkout" className="flex flex-1 justify-end">

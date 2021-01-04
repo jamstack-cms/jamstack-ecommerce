@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import { SiteContext, ContextProviderComponent } from "../context/mainContext"
-import { DENOMINATION } from "../../providers/inventoryProvider"
+import { numberFormat } from "../../utils/helpers"
 import { FaLongArrowAltLeft } from "react-icons/fa"
 import { Link } from "gatsby"
 import Image from "../components/Image"
@@ -164,7 +164,7 @@ const Checkout = ({ context }) => {
                       </p>
                       <div className="flex flex-1 justify-end">
                         <p className="m-0 pl-10 text-gray-900 tracking-tighter font-semibold">
-                          {DENOMINATION + item.price}
+                          {numberFormat(item.price)}
                         </p>
                       </div>
                     </div>
@@ -230,7 +230,7 @@ const Checkout = ({ context }) => {
                 <div className="ml-4 pl-2 flex flex-1 justify-end pt-2 md:pt-8 pr-4">
                   <p className="text-sm pr-10">Subtotal</p>
                   <p className="tracking-tighter w-38 flex justify-end">
-                    {DENOMINATION + total}
+                    {numberFormat(total)}
                   </p>
                 </div>
                 <div className="ml-4 pl-2 flex flex-1 justify-end pr-4">
@@ -242,7 +242,7 @@ const Checkout = ({ context }) => {
                 <div className="md:ml-4 pl-2 flex flex-1 justify-end bg-gray-200 pr-4 pt-6">
                   <p className="text-sm pr-10">Total</p>
                   <p className="font-semibold tracking-tighter w-38 flex justify-end">
-                    {DENOMINATION + (total + calculateShipping())}
+                    {numberFormat((total + calculateShipping()))}
                   </p>
                 </div>
                 <button
