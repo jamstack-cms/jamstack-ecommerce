@@ -22,7 +22,7 @@ export default function QuantityPicker({
       >+</button>
       <p className="
         w-10 h-10 pt-2 text-base
-        md:w-8 md:h-8 md:pt-1 md:text-xs
+        md:w-8 md:h-8 md:pt-2 md:text-xs
         m-0 border-t border-b text-center">{numberOfitems}</p>
       <button
         className="

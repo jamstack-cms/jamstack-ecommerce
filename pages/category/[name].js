@@ -40,7 +40,9 @@ const Category = (props) => {
 
 export async function getStaticPaths () {
   const categories = await fetchCategories()
-  const paths = categories.map(category => ({ params: { name: slugify(category) }}))
+  const paths = categories.map(category => {
+    return { params: { name: slugify(category) }}
+  })
   return {
     paths,
     fallback: false
@@ -48,11 +50,12 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const inventory = await inventoryForCategory(params.name)
+  const category = params.name.replace(/-/g," ")
+  const inventory = await inventoryForCategory(category)
   return {
     props: {
       inventory,
-      title: params.name
+      title: category
     }
   }
 }

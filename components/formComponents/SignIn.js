@@ -1,5 +1,4 @@
 import React from 'react'
-import { colors } from '../../theme'
 
 class SignIn extends React.Component {
   state = {
