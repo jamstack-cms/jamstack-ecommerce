@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import { slugify } from '../utils/helpers'
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Layout({ children, categories }) {
   return (
@@ -20,9 +20,13 @@ export default function Layout({ children, categories }) {
                     px-4 pt-12
                     pb-6 flex flex-col sm:flex-row">
                       <div>
-                        <div className="mb-4 sm:mr-16">
-                          <Image src="/logo.png" alt="logo" width="90" height="28" />
-                        </div>
+                        <Link href="/">
+                          <a>
+                            <div className="mb-4 sm:mr-16">
+                              <img src="/logo.png" alt="logo" width="90" height="28" />
+                            </div>
+                          </a>
+                        </Link>
                       </div>
                       <div className="flex flex-wrap mt-1">
                         <Link href="/">
