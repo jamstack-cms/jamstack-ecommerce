@@ -43,7 +43,6 @@ class ViewInventory extends React.Component {
   }
   render() {
     const { inventory, currentItem, editingIndex } = this.state
-    console.log('currentItem: ', currentItem)
     return (
       <div>
         <h2>Inventory</h2>

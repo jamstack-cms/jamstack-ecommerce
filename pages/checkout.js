@@ -109,7 +109,6 @@ const Checkout = ({ context }) => {
       receipt_email: "customer@example.com",
       id: uuid(),
     }
-    console.log("order: ", order)
     // TODO call API
     setOrderCompleted(true)
     clearCart()

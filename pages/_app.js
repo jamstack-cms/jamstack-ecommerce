@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Layout from '../components/layout'
+import Layout from '../components/main-layout'
 import fetchCategories from '../utils/categoryProvider'
 
 function Ecommerce({ Component, categories, pageProps }) {

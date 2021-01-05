@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import React from 'react'
 const STORAGE_KEY = 'NEXT_ECOMMERCE_STARTER_'
 
@@ -100,7 +100,6 @@ class ContextProviderComponent extends React.Component {
          setItemQuantity: this.setItemQuantity
       }}>
        {this.props.children}
-       <ToastContainer />
      </SiteContext.Provider>
     )
   }

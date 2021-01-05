@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import { slugify } from '../utils/helpers'
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
 
 export default function Layout({ children, categories }) {
   return (
@@ -94,6 +95,7 @@ export default function Layout({ children, categories }) {
                     </div>
                   </div>
                 </footer>
+                <ToastContainer />
               </div>
             )
           }

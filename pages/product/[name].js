@@ -87,10 +87,8 @@ export async function getStaticPaths () {
 
 export async function getStaticProps ({ params }) {
   const name = params.name.replace(/-/g," ")
-  console.log('name: ', name)
   const inventory = await fetchInventory()
   const product = inventory.find(item => item.name.toLowerCase() === name)
-  console.log('product: ', product)
 
   return {
     props: {
