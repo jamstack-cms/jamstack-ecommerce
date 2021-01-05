@@ -10,7 +10,7 @@ const Category = (props) => {
     <>
       <CartLink />
       <div className="flex flex-col items-center">
-        <div className="max-w-fw flex flex-col">
+        <div className="max-w-fw flex flex-col w-full">
           <div className="pt-10 pb-8">
             <h1 className="text-5xl font-light">{titleIfy(title)}</h1>
           </div>

@@ -10,7 +10,7 @@ class SignIn extends React.Component {
   render() {
     return (
       <div>
-        <h3>Sign In</h3>
+        <h3 className="my-4">Sign In</h3>
         <div className="flex flex-1 justify-center">
           <div className="w-full max-w-144">
             <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -40,7 +40,7 @@ class SignIn extends React.Component {
               </div>
             </form>
             <p className="text-center text-gray-500 text-xs">
-              &copy;2020 JAMstack ECommerce. All rights reserved.
+              &copy;2021 JAMstack ECommerce. All rights reserved.
             </p>
           </div>
         </div>

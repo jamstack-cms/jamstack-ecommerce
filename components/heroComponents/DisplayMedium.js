@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const DisplayMedium = ({ imageSrc, title, subtitle, link }) => {
   return (
-    <div className="lg:w-flex-half
+    <div className="
     mb-4 lg:mb-0
     bg-light p-8 pb-0 hover:bg-light-200">
       <Link href={`${link}`}>

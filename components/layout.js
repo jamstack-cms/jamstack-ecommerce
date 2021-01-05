@@ -3,13 +3,12 @@ import Image from 'next/image'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import { slugify } from '../utils/helpers'
 
-
 export default function Layout({ children, categories }) {
   return (
     <ContextProviderComponent>
       <SiteContext.Consumer>
         {
-          context => {
+          () => {
             return (
               <div className="min-h-screen">
                 <nav>
@@ -26,24 +25,43 @@ export default function Layout({ children, categories }) {
                         </div>
                       </div>
                       <div className="flex flex-wrap mt-1">
-                        <Link href="/" className="mb-4 w-24 mw-24 sm:w-20 sm:mr-16">
+                        <Link href="/">
                           <a>
-                            <p className="text-left m-0 text-smaller mr-4 sm:mr-8">
+                            <p className="
+                              sm:mr-8 sm:mb-0
+                              mb-4 text-left text-smaller mr-4
+                            ">
                             Home
                             </p>
                           </a>
                         </Link>
                         {
                           categories.map((category, index) => (
-                            <Link href={`/category/${slugify(category)}`} key={index} className="mb-4 w-24 mw-24 sm:w-20 sm:mr-16">
+                            <Link
+                              href={`/category/${slugify(category)}`}
+                              key={index}
+                            >
                               <a>
-                                <p className="text-left m-0 text-smaller mr-4 sm:mr-8">
+                                <p className="
+                                    sm:mr-8 sm:mb-0
+                                    mb-4 text-left text-smaller mr-4
+                                  ">
                                   {category.charAt(0).toUpperCase() + category.slice(1)}
                                 </p>
                               </a>
                             </Link>
                           ))
                         }
+                        <Link href="/categories">
+                          <a>
+                            <p className="
+                              sm:mr-8 sm:mb-0
+                              mb-4 text-left text-smaller mr-4 
+                            ">
+                            All
+                            </p>
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -53,15 +71,20 @@ export default function Layout({ children, categories }) {
                 </div>
                 <footer className="flex justify-center">
                   <div className="
-                  flex w-fw px-12
+                  sm:flex-row sm:items-center
+                  flex-col
+                  flex w-fw px-12 py-8
                   desktop:px-0
                   border-solid
-                  border-t border-gray-300 items-center">
-                    <span className="block text-gray-700 pt-4 pb-8 mt-2 text-xs">Copyright © 2021 JAMstack Ecommerce. All rights reserved.</span>
-                    <div className="flex flex-1 justify-end">
+                  border-t border-gray-300">
+                    <span className="block text-gray-700 text-xs">Copyright © 2021 JAMstack Ecommerce. All rights reserved.</span>
+                    <div className="
+                      sm:justify-end sm:m-0
+                      flex flex-1 mt-4
+                    ">
                       <Link href="/admin">
                         <a>
-                        <p className="pt-4 text-xs">Admins</p>
+                        <p className="text-sm font-semibold">Admins</p>
                         </a>
                       </Link>
                     </div>

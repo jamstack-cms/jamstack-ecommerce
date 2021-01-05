@@ -47,12 +47,12 @@ const Cart = ({ context }) => {
                       return (
                         <div className="border-b py-10" key={item.id}>
                           <div className="flex items-center hidden md:flex">
-                            <Link href={slugify(item.name)}>
+                            <Link href={`/product/${slugify(item.name)}`}>
                               <a>
                                 <Image className="w-32 m-0" src={item.image} alt={item.name} />
                               </a>
                             </Link>
-                            <Link href={slugify(item.name)}>
+                            <Link href={`/product/${slugify(item.name)}`}>
                               <a>
                                 <p className="
                                 m-0 pl-10 text-gray-600 text-sm w-56
@@ -69,7 +69,7 @@ const Cart = ({ context }) => {
                               />
                             </div>
                             <div className="flex flex-1 justify-end">
-                              <p className="m-0 pl-10 text-gray-900 tracking-tighter font-semibold">
+                              <p className="m-0 pl-10 text-gray-900 tracking-wider">
                                 {DENOMINATION + item.price}
                               </p>
                             </div>
@@ -81,13 +81,13 @@ const Cart = ({ context }) => {
                           </div>
 
                           <div className="flex items-center flex md:hidden">
-                            <Link href={slugify(item.name)}>
+                            <Link href={`/product/${slugify(item.name)}`}>
                               <a>
                                 <Image className="w-32 m-0" src={item.image} alt={item.name} />
                               </a>
                             </Link>
                             <div>
-                              <Link href={slugify(item.name)}>
+                              <Link href={`/product/${slugify(item.name)}`}>
                                 <a>
                                   <p className="
                                   m-0 pl-6 text-gray-600 text-base
@@ -105,7 +105,7 @@ const Cart = ({ context }) => {
                                 />
                               </div>
                               <div className="flex flex-1">
-                                <p className="text-lg m-0 pl-6 pt-4 text-gray-900 tracking-tighter font-semibold">
+                                <p className="text-lg m-0 pl-6 pt-4 text-gray-900 tracking-wider">
                                   {DENOMINATION + item.price}
                                 </p>
                               </div>
@@ -126,7 +126,7 @@ const Cart = ({ context }) => {
           }
           <div className="flex flex-1 justify-end py-8">
             <p className="text-sm pr-10">Total</p>
-            <p className="font-semibold tracking-tighter">{DENOMINATION + total}</p>
+            <p className="font-semibold tracking-wide">{DENOMINATION + total}</p>
           </div>
           {!cartEmpty && (
             <Link href="/checkout" className="flex flex-1 justify-end">

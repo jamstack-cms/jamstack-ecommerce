@@ -1,36 +1,35 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SiteContext } from '../context/mainContext'
 import { FaShoppingCart, FaCircle } from 'react-icons/fa';
 import Link from "next/link"
 import { colors } from '../theme'
 const { secondary } = colors
 
-class CartLink extends React.Component {
-  render() {
-    let { context: { numberOfItemsInCart } = { numberOfItemsInCart: 0 } } = this.props
-    return (
-      <div>
-        <div className="fixed top-49 right-24 desktop:right-flexiblemargin z-10">
-          <div className="flex flex-1 justify-end pr-4 relative">
-            <Link href="/cart">
-              <a>
-                <FaShoppingCart />
-              </a>
-            </Link>
-            {
-              numberOfItemsInCart > Number(0) && (
-                <div>
-                  <FaCircle color={secondary} size={12} />
-                </div>
-              )
-            }
-          </div>
+function CartLink(props) {
+  const [renderClientSideComponent, setRenderClientSideComponent] = useState(false)
+  useEffect(() => {
+    setRenderClientSideComponent(true)
+  }, [])
+  let { context: { numberOfItemsInCart = 0 }} = props
+  return (
+    <div>
+      <div className="fixed top-49 right-24 desktop:right-flexiblemargin z-10">
+        <div className="flex flex-1 justify-end pr-4 relative">
+          <Link href="/cart">
+            <a>
+              <FaShoppingCart />
+            </a>
+          </Link>
+          {
+            renderClientSideComponent && numberOfItemsInCart > Number(0) && (
+              <FaCircle color={secondary} size={12} suppressHydrationWarning />
+            )
+          }
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
-
 
 function CartLinkWithContext(props) {
   return (

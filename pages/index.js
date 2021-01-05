@@ -12,12 +12,11 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
       <CartLink />
       <div className="w-full">
         <div className="bg-blue-300
-        lg:h-hero
         p-6 pb-10 smpb-6
         flex lg:flex-row flex-col">
           <div className="pt-4 pl-2 sm:pt-12 sm:pl-12 flex flex-col">
             <Tag
-              year="2020"
+              year="2021"
               category="SOFAS"
             />
             <Center
@@ -39,7 +38,11 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
           </div>
         </div>
       </div>
-      <div className="my-4 lg:my-8 flex flex-col lg:flex-row justify-between">
+      <div className="
+        lg:my-8 lg:grid-cols-2
+        grid-cols-1
+        grid gap-4 my-4 
+      ">
         <DisplayMedium
           imageSrc={categories[0].image}
           subtitle={`${categories[0].itemCount} items`}
@@ -58,13 +61,33 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
         <p className="text-gray-600 text-sm">Find the perfect piece or accessory to finish off your favorite room in the house.</p>
       </div>
       <div className="my-8 flex flex-col lg:flex-row justify-between">
-        <DisplaySmall imageSrc={inventory[0].image} title={inventory[0].name} subtitle={inventory[0].categories[0]} link={slugify(inventory[0].name)} />
+        <DisplaySmall
+          imageSrc={inventory[0].image}
+          title={inventory[0].name}
+          subtitle={inventory[0].categories[0]}
+          link={`/product/${slugify(inventory[0].name)}`}
+        />
 
-        <DisplaySmall imageSrc={inventory[1].image} title={inventory[1].name} subtitle={inventory[1].categories[0]} link={slugify(inventory[1].name)} />
+        <DisplaySmall
+          imageSrc={inventory[1].image}
+          title={inventory[1].name}
+          subtitle={inventory[1].categories[0]}
+          link={`/product/${slugify(inventory[1].name)}`}
+        />
 
-        <DisplaySmall imageSrc={inventory[2].image} title={inventory[2].name} subtitle={inventory[2].categories[0]} link={slugify(inventory[2].name)} />
+        <DisplaySmall
+          imageSrc={inventory[2].image}
+          title={inventory[2].name}
+          subtitle={inventory[2].categories[0]}
+          link={`/product/${slugify(inventory[2].name)}`}
+        />
 
-        <DisplaySmall imageSrc={inventory[3].image} title={inventory[3].name} subtitle={inventory[3].categories[0]} link={slugify(inventory[3].name)} />
+        <DisplaySmall
+          imageSrc={inventory[3].image}
+          title={inventory[3].name}
+          subtitle={inventory[3].categories[0]}
+          link={`/product/${slugify(inventory[3].name)}`}
+        />
       </div>
     </>
   )
@@ -75,7 +98,6 @@ export async function getStaticProps() {
   
   const inventoryByCategory = inventory.reduce((acc, next) => {
     const categories = next.categories
-
     categories.forEach(c => {
       const index = acc.findIndex(item => item.name === c)
       if (index !== -1) {

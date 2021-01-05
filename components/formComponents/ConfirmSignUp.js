@@ -40,7 +40,7 @@ class ConfirmSignUp extends React.Component {
               </div>
             </form>
             <p className="text-center text-gray-500 text-xs">
-              &copy;2020 JAMstack ECommerce. All rights reserved.
+              &copy;2021 JAMstack ECommerce. All rights reserved.
             </p>
           </div>
         </div>

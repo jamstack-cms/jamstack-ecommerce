@@ -6,7 +6,7 @@ const DisplaySmall = ({ link, title, subtitle, imageSrc }) =>  (
   <div className="lg:w-flex-fourth bg-light
   px-6 pt-10 pb-2 lg:p-6 lg:pb-0
   hover:bg-light-200 lg:mb-0 mb-4">
-    <Link href={`/${link}`}>
+    <Link href={link}>
       <a>
         <div className="flex flex-column justify-center items-center h-32">
           <Image alt={title} src={imageSrc} className="w-3/5" />
