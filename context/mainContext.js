@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify'
 import React from 'react'
 const STORAGE_KEY = 'NEXT_ECOMMERCE_STARTER_'
+import CartLink from '../components/CartLink'
 
 const initialState = {
   cart: [],
@@ -99,6 +100,7 @@ class ContextProviderComponent extends React.Component {
          removeFromCart: this.removeFromCart,
          setItemQuantity: this.setItemQuantity
       }}>
+       <CartLink />
        {this.props.children}
      </SiteContext.Provider>
     )

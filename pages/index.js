@@ -1,7 +1,7 @@
 import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
-import CartLink from '../components/CartLink'
 import { titleIfy, slugify } from '../utils/helpers'
 import fetchInventory from '../utils/inventoryProvider'
+import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 
 const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
   const inventory = inventoryData.slice(0, 4)
@@ -9,7 +9,6 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
 
   return (
     <>
-      <CartLink />
       <div className="w-full">
         <div className="bg-blue-300
         p-6 pb-10 smpb-6
@@ -124,4 +123,16 @@ export async function getStaticProps() {
   }
 }
 
-export default Home
+function HomeViewWithContext(props) {
+  return (
+    <ContextProviderComponent>
+      <SiteContext.Consumer>
+        {
+          context =>  <Home {...props} context={context} />
+        }
+      </SiteContext.Consumer>
+    </ContextProviderComponent>
+  )
+}
+
+export default HomeViewWithContext

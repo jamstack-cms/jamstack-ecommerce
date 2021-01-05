@@ -1,12 +1,11 @@
 import fetchInventory from "../utils/inventoryProvider"
-import CartLink from '../components/CartLink'
 import { titleIfy , slugify } from '../utils/helpers'
 import { DisplayMedium } from '../components'
+import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 
-export default function Categories ({ categories = [] }) {
+function Categories ({ categories = [] }) {
   return (
     <div className="w-full">
-      <CartLink />
       <div className="
         sm:pt-10 pb-8
       ">
@@ -63,3 +62,17 @@ export async function getStaticProps() {
     }
   }
 }
+
+function CategoriesViewWithContext(props) {
+  return (
+    <ContextProviderComponent>
+      <SiteContext.Consumer>
+        {
+          context =>  <Categories {...props} context={context} />
+        }
+      </SiteContext.Consumer>
+    </ContextProviderComponent>
+  )
+}
+
+export default CategoriesViewWithContext

@@ -1,14 +1,13 @@
 import ListItem from '../../components/ListItem'
 import { titleIfy, slugify } from '../../utils/helpers'
-import CartLink from '../../components/CartLink'
 import fetchCategories from '../../utils/categoryProvider'
 import inventoryForCategory from '../../utils/inventoryForCategory'
+import { SiteContext, ContextProviderComponent } from '../../context/mainContext'
 
 const Category = (props) => {
   const { inventory, title } = props
   return (
     <>
-      <CartLink />
       <div className="flex flex-col items-center">
         <div className="max-w-fw flex flex-col w-full">
           <div className="pt-10 pb-8">
@@ -38,6 +37,18 @@ const Category = (props) => {
   )
 }
 
+function CategoryViewWithContext(props) {
+  return (
+    <ContextProviderComponent>
+      <SiteContext.Consumer>
+        {
+          context =>  <Category {...props} context={context} />
+        }
+      </SiteContext.Consumer>
+    </ContextProviderComponent>
+  )
+}
+
 export async function getStaticPaths () {
   const categories = await fetchCategories()
   const paths = categories.map(category => {
@@ -60,4 +71,4 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-export default Category
+export default CategoryViewWithContext

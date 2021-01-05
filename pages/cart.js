@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { FaTimes, FaLongArrowAltRight } from 'react-icons/fa'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import DENOMINATION from '../utils/currencyProvider'
-import CartLink from '../components/CartLink'
 import QuantityPicker from '../components/QuantityPicker'
 import { slugify } from '../utils/helpers'
 import Image from '../components/Image'
@@ -26,7 +25,6 @@ const Cart = ({ context }) => {
 
   return (
     <>
-      <CartLink />
       <div className="flex flex-col items-center pb-10">
         <div className="
           flex flex-col w-full
