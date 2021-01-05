@@ -25,3 +25,7 @@
     font-family: Eina;
   }
 }
+
+.Toastify__progress-bar--default {
+  background: #89bdf9 !important;
+}

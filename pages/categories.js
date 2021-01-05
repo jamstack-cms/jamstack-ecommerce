@@ -7,7 +7,9 @@ export default function Categories ({ categories = [] }) {
   return (
     <div className="w-full">
       <CartLink />
-      <div className="pt-10 pb-8 ">
+      <div className="
+        sm:pt-10 pb-8
+      ">
         <h1 className="text-5xl font-light">All categories</h1>
       </div>
       <div className="flex flex-col items-center">

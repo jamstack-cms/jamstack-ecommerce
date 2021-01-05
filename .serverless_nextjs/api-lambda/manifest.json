@@ -1,0 +1,1 @@
+{"apis":{"dynamic":{},"nonDynamic":{"/api/hello":"pages/api/hello.js","/api/inventory":"pages/api/inventory.js"}},"domainRedirects":{},"enableHTTPCompression":false}

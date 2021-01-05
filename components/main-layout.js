@@ -95,7 +95,7 @@ export default function Layout({ children, categories }) {
                     </div>
                   </div>
                 </footer>
-                <ToastContainer />
+                <ToastContainer autoClose={3000} />
               </div>
             )
           }

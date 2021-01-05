@@ -47,9 +47,6 @@ class SignUp extends React.Component {
                 </a>
               </div>
             </form>
-            <p className="text-center text-gray-500 text-xs">
-              &copy;2021 JAMstack ECommerce. All rights reserved.
-            </p>
           </div>
         </div>
       </div>
