@@ -7,7 +7,7 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^1.0.0-beta.6",
     "@stripe/stripe-js": "^1.0.0-beta.8",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "esm": "^3.2.25",
     "fs": "^0.0.1-security",
     "gatsby": "^2.19.7",
