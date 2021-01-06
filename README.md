@@ -142,6 +142,7 @@ await Promise.all(
 - Ability to add more / more configurable metadata to item details
 - Themeing + dark mode
 - Optional user account / profiles out of the box
+- Make Admin Panel responsive
 - Have an idea or a request? Submit [an issue](https://github.com/jamstack-cms/jamstack-ecommerce/issues) or [a pull request](https://github.com/jamstack-cms/jamstack-ecommerce/pulls)!
 
 ### Other considerations

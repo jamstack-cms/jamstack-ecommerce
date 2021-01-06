@@ -32,7 +32,7 @@ class AddInventory extends React.Component {
     } = this.state
     return (
       <div>
-        <h3>Add Item</h3>
+        <h3 className="text-3xl">Add Item</h3>
         <div className="flex flex-1 justify-center">
           <div className="w-full max-w-144">
             <form className="bg-white shadow-xs rounded px-8 pt-6 pb-8 mb-4">

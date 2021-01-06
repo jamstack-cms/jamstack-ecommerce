@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Eina";
+  src: url("Eina.otf");
+}
+
+@font-face {
+  font-family: "Eina Bold";
+  src: url("Eina-SemiBold.otf");
+}
+
+@font-face {
+  font-family: "Eina Light";
+  src: url("Eina-Light.otf");
+}

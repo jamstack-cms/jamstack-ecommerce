@@ -45,7 +45,7 @@ class ViewInventory extends React.Component {
     const { inventory, currentItem, editingIndex } = this.state
     return (
       <div>
-        <h2>Inventory</h2>
+        <h2 className="text-3xl">Inventory</h2>
         {
           inventory.map((item, index) => {
             const isEditing = editingIndex === index

@@ -12,10 +12,9 @@ class Inventory extends React.Component {
   render() {
      return (
        <div>
-          <h3>Inventory</h3>
-          <div className="flex">
-            <p role="button" className="mr-4 cursor-pointer hover:text-primary" onClick={() => this.toggleViewState('view')}>View</p>
-            <p role="button" className="cursor-pointer hover:text-primary" onClick={() => this.toggleViewState('add')}>Add</p>
+          <div className="flex my-6">
+            <p role="button" className="mr-4 cursor-pointer hover:text-primary" onClick={() => this.toggleViewState('view')}>View Inventory</p>
+            <p role="button" className="cursor-pointer hover:text-primary" onClick={() => this.toggleViewState('add')}>Add Item</p>
           </div>
           {
             this.state.viewState === 'view' ? (
