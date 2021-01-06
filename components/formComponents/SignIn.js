@@ -31,7 +31,7 @@ class SignIn extends React.Component {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
               </div>
               <div className="flex items-center justify-between">
-                <button onClick={() => this.props.signIn(this.state)} className="bg-secondary hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                <button onClick={() => this.props.signIn(this.state)} className="bg-primary hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                   Sign In
                 </button>
                 <a className="inline-block align-baseline font-bold text-sm" href="#">

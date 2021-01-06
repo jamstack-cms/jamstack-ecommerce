@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { FaTimes, FaLongArrowAltRight } from 'react-icons/fa'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import DENOMINATION from '../utils/currencyProvider'
-import QuantityPicker from '../components/QuantityPicker'
 import { slugify } from '../utils/helpers'
+import QuantityPicker from '../components/QuantityPicker'
 import Image from '../components/Image'
 
 const Cart = ({ context }) => {
@@ -129,9 +129,9 @@ const Cart = ({ context }) => {
           {!cartEmpty && (
             <Link href="/checkout" className="flex flex-1 justify-end">
               <a>
-                <div className="cursor-pointer flex">
+                <div className="cursor-pointer flex items-center">
                   <p className="text-gray-600 text-sm mr-2">Proceed to check out</p>
-                  <FaLongArrowAltRight className="text-gray-600 mt-1" />
+                  <FaLongArrowAltRight className="text-gray-600" />
                 </div>
               </a>
             </Link>

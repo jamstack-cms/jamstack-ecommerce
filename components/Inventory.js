@@ -14,15 +14,15 @@ class Inventory extends React.Component {
        <div>
           <h3>Inventory</h3>
           <div className="flex">
-            <p role="button" className="mr-4 cursor-pointer hover:text-secondary" onClick={() => this.toggleViewState('view')}>View</p>
-            <p role="button" className="cursor-pointer hover:text-secondary" onClick={() => this.toggleViewState('add')}>Add</p>
+            <p role="button" className="mr-4 cursor-pointer hover:text-primary" onClick={() => this.toggleViewState('view')}>View</p>
+            <p role="button" className="cursor-pointer hover:text-primary" onClick={() => this.toggleViewState('add')}>Add</p>
           </div>
           {
             this.state.viewState === 'view' ? (
               <ViewInventory />
             ) : (<AddInventory />)
           }
-          <button onClick={this.props.signOut} className="bg-secondary hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+          <button onClick={this.props.signOut} className="bg-primary hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
             Sign Out
           </button>
        </div>

@@ -3,7 +3,7 @@ import { SiteContext } from '../context/mainContext'
 import { FaShoppingCart, FaCircle } from 'react-icons/fa';
 import Link from "next/link"
 import { colors } from '../theme'
-const { secondary } = colors
+const { primary } = colors
 
 function CartLink(props) {
   const [renderClientSideComponent, setRenderClientSideComponent] = useState(false)
@@ -13,7 +13,7 @@ function CartLink(props) {
   let { context: { numberOfItemsInCart = 0 }} = props
   return (
     <div>
-      <div className="fixed top-49 right-24 desktop:right-flexiblemargin z-10">
+      <div className="fixed top-53 right-24 desktop:right-flexiblemargin z-10">
         <div className="flex flex-1 justify-end pr-4 relative">
           <Link href="/cart">
             <a>
@@ -22,7 +22,7 @@ function CartLink(props) {
           </Link>
           {
             renderClientSideComponent && numberOfItemsInCart > Number(0) && (
-              <FaCircle color={secondary} size={12} suppressHydrationWarning />
+              <FaCircle color={primary} size={12} suppressHydrationWarning />
             )
           }
         </div>

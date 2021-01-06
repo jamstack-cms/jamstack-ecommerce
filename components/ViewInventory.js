@@ -105,8 +105,8 @@ class ViewInventory extends React.Component {
                     </a>
                   </Link>
                   <div className="flex flex-1 justify-end">
-                    <p className="m-0 pl-10 text-gray-900 tracking-tighter text-sm">In stock: {item.currentInventory}</p>
-                    <p className="m-0 pl-20 text-gray-900 tracking-tighter font-semibold">
+                    <p className="m-0 pl-10 text-gray-900 text-sm">In stock: {item.currentInventory}</p>
+                    <p className="m-0 pl-20 text-gray-900 font-semibold">
                       {DENOMINATION + item.price}
                     </p>
                   </div>

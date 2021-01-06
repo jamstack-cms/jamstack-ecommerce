@@ -64,6 +64,10 @@ module.exports = {
         '48': '48px',
         '49': '49px',
         '50': '50px',
+        '51': '51px',
+        '52': '52px',
+        '53': '53px',
+        '54': '54px',
         '55': '55px',
         '60': '60px'
        },
@@ -163,8 +167,7 @@ module.exports = {
         '-12': '-12',
        },
        backgroundColor: {
-        'primary': '#000000',
-        'secondary': '#89bdf9',
+        'primary': '#89bdf9',
         'light': '#f5f5f5',
         'light-200': '#f0f0f0',
         'light-300': '#e8e8e8'

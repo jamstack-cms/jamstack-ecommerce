@@ -134,11 +134,11 @@ const Checkout = ({ context }) => {
           "
       >
         <div className="pt-10 pb-8">
-          <h1 className="text-5xl font-light">Checkout</h1>
+          <h1 className="text-5xl font-light mb-6">Checkout</h1>
           <Link href="/cart">
             <a>
-              <div className="cursor-pointer flex">
-                <FaLongArrowAltLeft className="mr-2 text-gray-600 mt-1" />
+              <div className="cursor-pointer flex  items-center">
+                <FaLongArrowAltLeft className="mr-2 text-gray-600" />
                 <p className="text-gray-600 text-sm">Edit Cart</p>
               </div>
             </a>
@@ -163,7 +163,7 @@ const Checkout = ({ context }) => {
                         {item.name}
                       </p>
                       <div className="flex flex-1 justify-end">
-                        <p className="m-0 pl-10 text-gray-900 tracking-tighter font-semibold">
+                        <p className="m-0 pl-10 text-gray-900 font-semibold">
                           {DENOMINATION + item.price}
                         </p>
                       </div>
@@ -218,7 +218,7 @@ const Checkout = ({ context }) => {
                       type="submit"
                       disabled={!stripe}
                       onClick={handleSubmit}
-                      className="hidden md:block bg-secondary hover:bg-black text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                      className="hidden md:block bg-primary hover:bg-black text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
                       type="button"
                     >
                       Confirm order
@@ -227,21 +227,21 @@ const Checkout = ({ context }) => {
                 </div>
               </div>
               <div className="md:pt-20">
-                <div className="ml-4 pl-2 flex flex-1 justify-end pt-2 md:pt-8 pr-4">
-                  <p className="text-sm pr-10">Subtotal</p>
-                  <p className="tracking-tighter w-38 flex justify-end">
+                <div className="pl-4 flex flex-1 pt-2 md:pt-8 mt-2 sm:mt-0">
+                  <p className="text-sm pr-10 text-left">Subtotal</p>
+                  <p className="w-38 flex text-right justify-end">
                     {DENOMINATION + total}
                   </p>
                 </div>
-                <div className="ml-4 pl-2 flex flex-1 justify-end pr-4">
+                <div className="pl-4 flex flex-1 my-2">
                   <p className="text-sm pr-10">Shipping</p>
-                  <p className="tracking-tighter w-38 flex justify-end">
+                  <p className="w-38 flex justify-end">
                     FREE SHIPPING
                   </p>
                 </div>
-                <div className="md:ml-4 pl-2 flex flex-1 justify-end bg-gray-200 pr-4 pt-6">
+                <div className="md:ml-4 pl-2 flex flex-1 bg-gray-200 pr-4 pb-1 pt-2 mt-2">
                   <p className="text-sm pr-10">Total</p>
-                  <p className="font-semibold tracking-tighter w-38 flex justify-end">
+                  <p className="font-semibold w-38 flex justify-end">
                     {DENOMINATION + (total + calculateShipping())}
                   </p>
                 </div>
@@ -249,7 +249,7 @@ const Checkout = ({ context }) => {
                   type="submit"
                   disabled={!stripe}
                   onClick={handleSubmit}
-                  className="md:hidden bg-secondary hover:bg-black text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
+                  className="md:hidden bg-primary hover:bg-black text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline"
                   type="button"
                 >
                   Confirm order
