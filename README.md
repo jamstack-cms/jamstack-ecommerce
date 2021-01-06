@@ -1,4 +1,4 @@
-## Jamstack ECommerce Professional (Beta)
+## Jamstack ECommerce Professional
 
 Jamstack ECommerce Professional provides a way to quickly get up and running with a fully configurable ECommerce site using Next.js.
 
@@ -25,8 +25,6 @@ Click [here](https://www.jamstackecommerce.dev/) to see a live preview.
 ### Admin panel
 ![Admin panel](example-images/5.png)
 </details>
-
-> This project is still in Beta.
 
 ### Getting started
 
