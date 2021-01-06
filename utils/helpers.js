@@ -14,12 +14,12 @@ function slugify(string) {
 }
 
 function titleIfy(slug) {
-  var words = slug.split('-');
+  var words = slug.split('-')
   for (var i = 0; i < words.length; i++) {
-    var word = words[i];
-    words[i] = word.charAt(0).toUpperCase() + word.slice(1);
+    var word = words[i]
+    words[i] = word.charAt(0).toUpperCase() + word.slice(1)
   }
-  return words.join(' ');
+  return words.join(' ')
 }
 
 function getTrimmedString(string, length = 8) {

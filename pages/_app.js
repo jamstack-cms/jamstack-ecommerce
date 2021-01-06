@@ -1,11 +1,8 @@
 import '../styles/globals.css'
 import Layout from '../layouts/layout'
-/* Uncomment for dynamic nav
 import fetchCategories from '../utils/categoryProvider'
-*/
 
-function Ecommerce({ Component, pageProps }) {
-  const categories = ['new arrivals', 'sofas', 'living room', 'on sale', 'chairs']
+function Ecommerce({ Component, pageProps, categories }) {
   return (
     <Layout categories={categories}>
       <Component {...pageProps} />
@@ -13,13 +10,11 @@ function Ecommerce({ Component, pageProps }) {
   )
 }
 
-/* Uncomment for dynamic nav
 Ecommerce.getInitialProps = async () => {
   const categories = await fetchCategories()
   return {
     categories
   }
 }
-*/
 
 export default Ecommerce

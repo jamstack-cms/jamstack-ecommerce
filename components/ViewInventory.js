@@ -53,7 +53,7 @@ class ViewInventory extends React.Component {
               return (
                 <div className="border-b py-10" key={item.id}>
                   <div className="flex items-center">
-                    <Link href={slugify(item.name)}>
+                    <Link href={`/product/${slugify(item.name)}`}>
                       <a aria-label={item.name}>
                         <Image className="w-32 m-0" src={item.image} alt={item.name} />
                       </a>
@@ -92,7 +92,7 @@ class ViewInventory extends React.Component {
             return (
               <div className="border-b py-10" key={item.id}>
                 <div className="flex items-center">
-                  <Link href={slugify(item.name)}>
+                  <Link href={`/product/${slugify(item.name)}`}>
                     <a>
                       <Image className="w-32 m-0" src={item.image} alt={item.name} />
                     </a>
