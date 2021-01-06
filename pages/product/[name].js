@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import { SiteContext, ContextProviderComponent } from '../../context/mainContext'
 import Button from '../../components/Button'
 import Image from '../../components/Image'
 import QuantityPicker from '../../components/QuantityPicker'
 import { fetchInventory } from '../../utils/inventoryProvider'
 import { slugify } from '../../utils/helpers'
+import CartLink from '../../components/CartLink'
+import { SiteContext, ContextProviderComponent } from '../../context/mainContext'
 
 const ItemView = (props) => {
   const [numberOfitems, updateNumberOfItems] = useState(1)
@@ -29,6 +30,7 @@ const ItemView = (props) => {
 
   return (
     <>
+      <CartLink />
       <Head>
         <title>Jamstack ECommerce - {name}</title>
         <meta property="og:title" content={`Jamstack ECommerce - ${name}`} key="title" />
@@ -64,19 +66,6 @@ const ItemView = (props) => {
   )
 }
 
-
-function ItemViewWithContext(props) {
-  return (
-    <ContextProviderComponent>
-      <SiteContext.Consumer>
-        {
-          context =>  <ItemView {...props} context={context} />
-        }
-      </SiteContext.Consumer>
-    </ContextProviderComponent>
-  )
-}
-
 export async function getStaticPaths () {
   const inventory = await fetchInventory()
   const paths = inventory.map(item => {
@@ -98,6 +87,18 @@ export async function getStaticProps ({ params }) {
       product,
     }
   }
+}
+
+function ItemViewWithContext(props) {
+  return (
+    <ContextProviderComponent>
+      <SiteContext.Consumer>
+        {
+          context => <ItemView {...props} context={context} />
+        }
+      </SiteContext.Consumer>
+    </ContextProviderComponent>
+  )
 }
 
 export default ItemViewWithContext

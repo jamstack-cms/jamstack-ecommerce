@@ -41,5 +41,4 @@ function CartLinkWithContext(props) {
   )
 }
 
-
 export default CartLinkWithContext

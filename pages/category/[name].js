@@ -3,12 +3,14 @@ import ListItem from '../../components/ListItem'
 import { titleIfy, slugify } from '../../utils/helpers'
 import fetchCategories from '../../utils/categoryProvider'
 import inventoryForCategory from '../../utils/inventoryForCategory'
-import { SiteContext, ContextProviderComponent } from '../../context/mainContext'
+import CartLink from '../../components/CartLink'
+import { ContextProviderComponent } from '../../context/mainContext'
 
 const Category = (props) => {
   const { inventory, title } = props
   return (
-    <>
+    <ContextProviderComponent>
+      <CartLink />
       <Head>
         <title>Jamstack ECommerce - {title}</title>
         <meta property="og:title" content={`Jamstack ECommerce - ${title}`} key="title" />
@@ -38,18 +40,6 @@ const Category = (props) => {
           </div>
           </div>
       </div>
-    </>
-  )
-}
-
-function CategoryViewWithContext(props) {
-  return (
-    <ContextProviderComponent>
-      <SiteContext.Consumer>
-        {
-          context =>  <Category {...props} context={context} />
-        }
-      </SiteContext.Consumer>
     </ContextProviderComponent>
   )
 }
@@ -76,4 +66,4 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-export default CategoryViewWithContext
+export default Category
