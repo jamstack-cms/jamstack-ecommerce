@@ -1,5 +1,3 @@
-import inventory from './inventory'
-
 function inventoryByCategory (inventory) {
   return inventory.reduce((acc, next) => {
     const categories = next.categories
@@ -16,28 +14,6 @@ function inventoryByCategory (inventory) {
   }, {})
 }
 
-function inventoryCategories() {
-  return inventory.reduce((acc, next) => {
-    const categories = next.categories
-    categories.forEach(c => {
-      const index = acc.findIndex(item => item.name === c)
-      if (index !== -1) {
-        const item = acc[index]
-        item.itemCount = item.itemCount + 1
-        acc[index] = item
-      } else {
-        const item = {
-          name: c,
-          image: next.image,
-          itemCount: 1
-        }
-        acc.push(item)
-      }
-    })
-    return acc
-  }, [])
-}
-
 export {
-  inventoryByCategory, inventoryCategories
+  inventoryByCategory
 }

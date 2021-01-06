@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { titleIfy , slugify } from '../utils/helpers'
 import { DisplayMedium } from '../components'
 import CartLink from '../components/CartLink'
-import { inventoryCategories } from '../utils/inventoryByCategory'
+import { fetchInventory } from '../utils/inventoryProvider'
 
 function Categories ({ categories = [] }) {
   return (
@@ -41,11 +41,31 @@ function Categories ({ categories = [] }) {
   )
 }
 
-export function getStaticProps() {
-  const categories = inventoryCategories()
+export async function getStaticProps() {
+  const inventory = await fetchInventory()
+  const inventoryCategories = inventory.reduce((acc, next) => {
+    const categories = next.categories
+    categories.forEach(c => {
+      const index = acc.findIndex(item => item.name === c)
+      if (index !== -1) {
+        const item = acc[index]
+        item.itemCount = item.itemCount + 1
+        acc[index] = item
+      } else {
+        const item = {
+          name: c,
+          image: next.image,
+          itemCount: 1
+        }
+        acc.push(item)
+      }
+    })
+    return acc
+  }, [])
+
   return {
     props: {
-      categories
+      categories: inventoryCategories
     }
   }
 }
