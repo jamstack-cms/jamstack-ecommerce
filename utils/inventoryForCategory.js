@@ -1,5 +1,5 @@
 import { fetchInventory } from './inventoryProvider'
-import inventoryByCategory from './inventoryByCategory'
+import { inventoryByCategory } from './inventoryByCategory'
 
 async function inventoryForCategory (category) {
   const inventory = await fetchInventory()

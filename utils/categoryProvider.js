@@ -1,4 +1,4 @@
-import inventory from '../inventory'
+import inventory from './inventory'
 
 async function fetchCategories () {
   const categories = inventory.reduce((acc, next) => {

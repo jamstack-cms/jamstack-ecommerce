@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { SiteContext } from '../context/mainContext'
+import { ContextProviderComponent, SiteContext } from '../context/mainContext'
 import { FaShoppingCart, FaCircle } from 'react-icons/fa';
 import Link from "next/link"
 import { colors } from '../theme'
@@ -33,11 +33,13 @@ function CartLink(props) {
 
 function CartLinkWithContext(props) {
   return (
-    <SiteContext.Consumer>
-      {
-        context => <CartLink {...props} context={context} />
-      }
-    </SiteContext.Consumer>
+    <ContextProviderComponent>
+      <SiteContext.Consumer>
+        {
+          context => <CartLink {...props} context={context} />
+        }
+      </SiteContext.Consumer>
+    </ContextProviderComponent>
   )
 }
 

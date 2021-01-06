@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import { fetchInventory } from "../utils/inventoryProvider"
 import { titleIfy , slugify } from '../utils/helpers'
 import { DisplayMedium } from '../components'
 import CartLink from '../components/CartLink'
-import { ContextProviderComponent } from '../context/mainContext'
+import { inventoryCategories } from '../utils/inventoryByCategory'
 
 function Categories ({ categories = [] }) {
   return (
-    <ContextProviderComponent>
+    <>
       <div className="w-full">
         <CartLink />
         <Head>
@@ -36,38 +35,17 @@ function Categories ({ categories = [] }) {
             ))
           }
           </div>
+        </div>
       </div>
-      </div>
-    </ContextProviderComponent>
+    </>
   )
 }
 
-export async function getStaticProps() {
-  const inventory = await fetchInventory()
-
-  const inventoryByCategory = inventory.reduce((acc, next) => {
-    const categories = next.categories
-    categories.forEach(c => {
-      const index = acc.findIndex(item => item.name === c)
-      if (index !== -1) {
-        const item = acc[index]
-        item.itemCount = item.itemCount + 1
-        acc[index] = item
-      } else {
-        const item = {
-          name: c,
-          image: next.image,
-          itemCount: 1
-        }
-        acc.push(item)
-      }
-    })
-    return acc
-  }, [])
-
+export function getStaticProps() {
+  const categories = inventoryCategories()
   return {
     props: {
-      categories: inventoryByCategory
+      categories
     }
   }
 }

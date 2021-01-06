@@ -1,4 +1,4 @@
-import inventory from '../../inventory'
+import inventory from '../../utils/inventory'
 
 /*
 Inventory items must adhere to the following schema:

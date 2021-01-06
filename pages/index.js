@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
 import { titleIfy, slugify } from '../utils/helpers'
 import { fetchInventory } from '../utils/inventoryProvider'
-import { ContextProviderComponent } from '../context/mainContext'
 import CartLink from '../components/CartLink'
 
 const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
@@ -10,7 +9,7 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
   const categories = categoryData.slice(0, 2)
 
   return (
-    <ContextProviderComponent>
+    <>
       <CartLink />
       <div className="w-full">
         <Head>
@@ -95,7 +94,7 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
           link={`/product/${slugify(inventory[3].name)}`}
         />
       </div>
-    </ContextProviderComponent>
+    </>
   )
 }
 

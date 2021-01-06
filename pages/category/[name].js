@@ -4,12 +4,11 @@ import { titleIfy, slugify } from '../../utils/helpers'
 import fetchCategories from '../../utils/categoryProvider'
 import inventoryForCategory from '../../utils/inventoryForCategory'
 import CartLink from '../../components/CartLink'
-import { ContextProviderComponent } from '../../context/mainContext'
 
 const Category = (props) => {
   const { inventory, title } = props
   return (
-    <ContextProviderComponent>
+    <>
       <CartLink />
       <Head>
         <title>Jamstack ECommerce - {title}</title>
@@ -40,7 +39,7 @@ const Category = (props) => {
           </div>
           </div>
       </div>
-    </ContextProviderComponent>
+    </>
   )
 }
 

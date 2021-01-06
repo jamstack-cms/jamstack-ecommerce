@@ -1,4 +1,4 @@
-import inventory from '../inventory';
+import inventory from './inventory';
 
 /*
 Inventory items should adhere to the following schema:
@@ -21,5 +21,5 @@ async function fetchInventory() {
 }
 
 export {
-  fetchInventory
+  fetchInventory, inventory as staticInventory
 }
