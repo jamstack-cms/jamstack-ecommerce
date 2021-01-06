@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { FaTimes, FaLongArrowAltRight } from 'react-icons/fa'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 import DENOMINATION from '../utils/currencyProvider'
@@ -8,6 +9,10 @@ import Image from '../components/Image'
 import Head from 'next/head'
 
 const Cart = ({ context }) => {
+  const [renderClientSideComponent, setRenderClientSideComponent] = useState(false)
+  useEffect(() => {
+    setRenderClientSideComponent(true)
+  }, [])
   const {
     numberOfItemsInCart, cart, removeFromCart, total, setItemQuantity
   } = context
@@ -23,6 +28,8 @@ const Cart = ({ context }) => {
     item.quantity = item.quantity - 1
     setItemQuantity(item)
   }
+
+  if (!renderClientSideComponent) return null
 
   return (
     <>
