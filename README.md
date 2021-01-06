@@ -11,7 +11,7 @@ Out of the box, the site uses completely static data coming from a provider at `
 Click [here](https://www.jamstackecommerce.dev/) to see a live preview.
 
 <details>
-  ### Other Jamstack ECommerce pages<
+  <summary>### Other Jamstack ECommerce pages</summary>
 
 ### Category view
 ![Category view](example-images/2.png)
