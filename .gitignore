@@ -35,4 +35,4 @@ yarn-error.log*
 
 # serverless
 .serverless
-.serverless_next
+.serverless_nextjs
