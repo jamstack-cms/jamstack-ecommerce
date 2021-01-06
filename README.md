@@ -56,6 +56,14 @@ $ npm run dev
 $ npm run build
 ```
 
+## Deploy to Vercel
+
+Use the [Vercel CLI](https://vercel.com/download)
+
+```sh
+vercel
+```
+
 ## Deploy to AWS
 
 ```sh
