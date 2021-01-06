@@ -1,5 +1,5 @@
 {
   "components": {
-    "myNextApplication": "/Users/dabit/.serverless/components/registry/npm/@sls-next/serverless-component@1.19.0-alpha.3/node_modules/@sls-next/serverless-component"
+    "jamstackEcommerceNext": "/Users/dabit/.serverless/components/registry/npm/@sls-next/serverless-component@1.18.0/node_modules/@sls-next/serverless-component"
   }
 }

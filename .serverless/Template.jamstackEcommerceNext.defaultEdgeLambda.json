@@ -1,0 +1,17 @@
+{
+  "name": "2tnvtey-prvmxew",
+  "hash": "NcA+gFdSsRjH9zAwKRPvK85YNeFVwcUPy4V3eeO0buQ=",
+  "description": "Default Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "/Users/dabit/opensource/jamstack-ecommerce/.serverless_nextjs/default-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs12.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::557458351015:role/2tnvtey-atiw1sn"
+  },
+  "arn": "arn:aws:lambda:us-east-1:557458351015:function:2tnvtey-prvmxew",
+  "region": "us-east-1"
+}

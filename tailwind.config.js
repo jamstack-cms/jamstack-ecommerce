@@ -1,8 +1,24 @@
 module.exports = {
-  purge: ['./pages/**/*.js', './components/**/*.js'],
+  // purge: ['./pages/**/*.js', './components/**/*.js'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        "72": "18rem",
+        "80": "20rem",
+        "88": "22rem",
+        "96": "24rem",
+        "104": "26rem",
+        "112": "28rem",
+        "120": "30rem",
+        "124": "31rem",
+        "128": "32rem",
+        "132": "33rem",
+        "136": "34rem",
+        "140": "35rem",
+        "144": "36rem",
+        "fw": "1440px",
+      },
       fontSize: {
         'xxs': '.6rem',
         'smaller': '.95rem'
@@ -65,9 +81,9 @@ module.exports = {
         '49': '49px',
         '50': '50px',
         '51': '51px',
-        '52': '52px',
+        '52':'52px',
         '53': '53px',
-        '54': '54px',
+        '54':'54px',
         '55': '55px',
         '60': '60px'
        },
@@ -92,22 +108,6 @@ module.exports = {
          "136": "34rem",
          "140": "35rem",
          "144": "36rem",
-       },
-       spacing: {
-         "72": "18rem",
-         "80": "20rem",
-         "88": "22rem",
-         "96": "24rem",
-         "104": "26rem",
-         "112": "28rem",
-         "120": "30rem",
-         "124": "31rem",
-         "128": "32rem",
-         "132": "33rem",
-         "136": "34rem",
-         "140": "35rem",
-         "144": "36rem",
-         "fw": "1440px"
        },
        padding: {
          ".5": ".125rem"
@@ -173,9 +173,6 @@ module.exports = {
         'light-300': '#e8e8e8'
        }
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

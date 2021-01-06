@@ -1,0 +1,13 @@
+{
+  "region": "us-east-1",
+  "privateZone": false,
+  "domain": "jamstackecommerce.dev",
+  "subdomains": [
+    {
+      "domain": "www.jamstackecommerce.dev",
+      "distributionId": "E1P4VMYK66W6MI",
+      "url": "https://d1f0m4vj3hn4zi.cloudfront.net",
+      "type": "awsCloudFront"
+    }
+  ]
+}

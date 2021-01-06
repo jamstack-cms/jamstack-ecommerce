@@ -1,4 +1,4 @@
-myNextApplication:
-  component: "@sls-next/serverless-component@1.19.0-alpha.3"
+jamstackEcommerceNext:
+  component: "@sls-next/serverless-component@1.18.0"
   inputs:
     domain: "jamstackecommerce.dev"

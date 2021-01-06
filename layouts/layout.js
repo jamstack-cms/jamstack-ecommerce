@@ -9,24 +9,17 @@ export default function Layout({ children, categories }) {
     categories = categories.slice(0, navItemLength)
   }
   return (
-    <div className="min-h-screen">
+    <div>
       <nav>
         <div className="flex justify-center">
-          <div className="
-          w-fw
-          mobile:px-12
-          desktop:px-0
-          px-4 pt-12
-          pb-6 flex flex-col sm:flex-row">
-            <div>
-              <Link href="/">
-                <a>
-                  <div className="mb-4 sm:mr-16">
-                    <img src="/logo.png" alt="logo" width="90" height="28" />
-                  </div>
-                </a>
-              </Link>
-            </div>
+          <div className="px-4 pt-12 pb-6 flex flex-col w-fw mobile:px-12 sm:flex-row  desktop:px-0">
+            <Link href="/">
+              <a>
+                <div className="mb-4 sm:mr-16">
+                  <img src="/logo.png" alt="logo" width="90" height="28" />
+                </div>
+              </a>
+            </Link>
             <div className="flex flex-wrap mt-1">
               <Link href="/">
                 <a>
