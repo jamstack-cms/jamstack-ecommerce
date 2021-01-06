@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
 import { titleIfy, slugify } from '../utils/helpers'
 import fetchInventory from '../utils/inventoryProvider'
@@ -10,6 +11,10 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
   return (
     <>
       <div className="w-full">
+        <Head>
+          <title>Jamstack ECommerce</title>
+          <meta property="og:title" content="Jamstack ECommerce" key="title" />
+        </Head>
         <div className="bg-blue-300
         p-6 pb-10 smpb-6
         flex lg:flex-row flex-col">

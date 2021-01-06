@@ -5,6 +5,7 @@ import DENOMINATION from '../utils/currencyProvider'
 import { slugify } from '../utils/helpers'
 import QuantityPicker from '../components/QuantityPicker'
 import Image from '../components/Image'
+import Head from 'next/head'
 
 const Cart = ({ context }) => {
   const {
@@ -26,6 +27,10 @@ const Cart = ({ context }) => {
   return (
     <>
       <div className="flex flex-col items-center pb-10">
+        <Head>
+          <title>Jamstack ECommerce - Cart</title>
+          <meta property="og:title" content="Jamstack ECommerce - Cart" key="title" />
+        </Head>
         <div className="
           flex flex-col w-full
           c_large:w-c_large

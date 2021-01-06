@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Head from 'next/head'
 import { SiteContext, ContextProviderComponent } from "../context/mainContext"
 import DENOMINATION from "../utils/currencyProvider"
 import { FaLongArrowAltLeft } from "react-icons/fa"
@@ -127,6 +128,10 @@ const Checkout = ({ context }) => {
 
   return (
     <div className="flex flex-col items-center pb-10">
+      <Head>
+        <title>Jamstack ECommerce - Checkout</title>
+        <meta property="og:title" content="Jamstack ECommerce - Checkpit" key="title" />
+      </Head>
       <div
         className="
             flex flex-col w-full

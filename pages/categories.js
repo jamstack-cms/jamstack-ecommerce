@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import fetchInventory from "../utils/inventoryProvider"
 import { titleIfy , slugify } from '../utils/helpers'
 import { DisplayMedium } from '../components'
@@ -6,6 +7,10 @@ import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 function Categories ({ categories = [] }) {
   return (
     <div className="w-full">
+      <Head>
+        <title>Jamstack ECommerce - All Categories</title>
+        <meta property="og:title" content="Jamstack ECommerce - All Categories" key="title" />
+      </Head>
       <div className="
         sm:pt-10 pb-8
       ">
