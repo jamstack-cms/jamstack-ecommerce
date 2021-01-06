@@ -1,10 +1,26 @@
-## JAMstack ECommerce Professional (Beta)
+## Jamstack ECommerce Professional (Beta)
 
-JAMstack ECommerce Professional provides a way to quickly get up and running with a fully configurable JAMstack E Commerce site.
+Jamstack ECommerce Professional provides a way to quickly get up and running with a fully configurable JAMstack E Commerce site.
 
 Out of the box, the site uses completely static data coming from a provider at `providers/inventoryProvider.js`. You can update this provider to fetch data from any real API by changing the call in the `getInventory` function.
 
-![]()
+![Home](example-images/1.png)
+
+<details>
+  <summary>Other Jamstack ECommerce pages</summary>
+
+### Category view
+![Category view](example-images/2.png)
+
+### Item view
+![Item view](example-images/3.png)
+
+### Cart view
+![Cart view](example-images/4.png)
+
+### Admin panel
+![Admin panel](example-images/5.png)
+</details>
 
 > This project is still in Beta.
 
