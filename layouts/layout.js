@@ -12,14 +12,16 @@ export default function Layout({ children, categories }) {
     <div>
       <nav>
         <div className="flex justify-center">
-          <div className="px-4 pt-12 pb-6 flex flex-col w-fw mobile:px-12 sm:flex-row  desktop:px-0">
-            <Link href="/">
-              <a aria-label="Home">
-                <div className="mb-4 sm:mr-16">
+          <div className="
+          mobile:px-12 sm:flex-row sm:pt-12 sm:pb-6 desktop:px-0
+          px-4 pt-8 flex flex-col w-fw">
+            <div className="mb-4 sm:mr-16 max-w-48 sm:max-w-none">
+              <Link href="/">
+                <a aria-label="Home">
                   <img src="/logo.png" alt="logo" width="90" height="28" />
-                </div>
-              </a>
-            </Link>
+                </a>
+              </Link>
+            </div>
             <div className="flex flex-wrap mt-1">
               <Link href="/">
                 <a aria-label="Home">
