@@ -159,7 +159,7 @@ const Checkout = ({ context }) => {
                         src={item.image}
                         alt={item.name}
                       />
-                      <p className="m-0 pl-10 text-gray-600 text-sm">
+                      <p className="m-0 pl-10 text-gray-600">
                         {item.name}
                       </p>
                       <div className="flex flex-1 justify-end">

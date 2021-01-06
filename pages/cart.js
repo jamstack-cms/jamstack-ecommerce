@@ -53,7 +53,7 @@ const Cart = ({ context }) => {
                             <Link href={`/product/${slugify(item.name)}`}>
                               <a>
                                 <p className="
-                                m-0 pl-10 text-gray-600 text-sm w-56
+                                m-0 pl-10 text-gray-600 w-60
                                 ">
                                   {item.name}
                                 </p>
