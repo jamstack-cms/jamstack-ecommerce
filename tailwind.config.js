@@ -171,6 +171,9 @@ module.exports = {
         'light': '#f5f5f5',
         'light-200': '#f0f0f0',
         'light-300': '#e8e8e8'
+       },
+       lineHeight: {
+        'large': '54px'
        }
     },
   },

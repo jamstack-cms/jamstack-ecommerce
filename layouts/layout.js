@@ -13,8 +13,9 @@ export default function Layout({ children, categories }) {
       <nav>
         <div className="flex justify-center">
           <div className="
-          mobile:px-12 sm:flex-row sm:pt-12 sm:pb-6 desktop:px-0
-          px-4 pt-8 flex flex-col w-fw">
+            mobile:px-12 sm:flex-row sm:pt-12 sm:pb-6 desktop:px-0
+            px-4 pt-8 flex flex-col w-fw
+          ">
             <div className="mb-4 sm:mr-16 max-w-48 sm:max-w-none">
               <Link href="/">
                 <a aria-label="Home">

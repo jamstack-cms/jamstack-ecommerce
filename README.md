@@ -164,6 +164,7 @@ await Promise.all(
 
 ### Roadmap
 
+- Full product and category search
 - Auto dropdown navigation for large number of categories
 - Ability to add more / more configurable metadata to item details
 - Themeing + dark mode
