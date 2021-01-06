@@ -5,7 +5,7 @@ import fetchCategories from '../utils/categoryProvider'
 */
 
 function Ecommerce({ Component, pageProps }) {
-  const categories = ['new arrivals', 'sofas', 'living room', 'on sale']
+  const categories = ['new arrivals', 'sofas', 'living room', 'on sale', 'chairs']
   return (
     <Layout categories={categories}>
       <Component {...pageProps} />

@@ -14,7 +14,7 @@ function Categories ({ categories = [] }) {
           <meta property="og:title" content="Jamstack ECommerce - All Categories" key="title" />
         </Head>
         <div className="
-          sm:pt-10 pb-8
+          pt-4 sm:pt-10 pb-8
         ">
           <h1 className="text-5xl font-light">All categories</h1>
         </div>
