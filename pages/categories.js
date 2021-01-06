@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import fetchInventory from "../utils/inventoryProvider"
+import { fetchInventory } from "../utils/inventoryProvider"
 import { titleIfy , slugify } from '../utils/helpers'
 import { DisplayMedium } from '../components'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'

@@ -1,5 +1,5 @@
 import React from 'react'
-import getInventory from '../utils/inventoryProvider'
+import { fetchInventory } from '../utils/inventoryProvider'
 import DENOMINATION from '../utils/currencyProvider'
 import Image from '../components/Image'
 import Link from 'next/link'
@@ -16,7 +16,7 @@ class ViewInventory extends React.Component {
     this.fetchInventory()
   }
   fetchInventory = async() => {
-    const inventory = await getInventory()
+    const inventory = await fetchInventory()
     this.setState({ inventory })
   }
   editItem = (item, index) => {
@@ -54,7 +54,7 @@ class ViewInventory extends React.Component {
                 <div className="border-b py-10" key={item.id}>
                   <div className="flex items-center">
                     <Link href={slugify(item.name)}>
-                      <a>
+                      <a aria-label={item.name}>
                         <Image className="w-32 m-0" src={item.image} alt={item.name} />
                       </a>
                     </Link>

@@ -1,4 +1,4 @@
-import fetchInventory from './inventoryProvider'
+import { fetchInventory } from './inventoryProvider'
 import inventoryByCategory from './inventoryByCategory'
 
 async function inventoryForCategory (category) {

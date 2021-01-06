@@ -14,7 +14,7 @@ export default function Layout({ children, categories }) {
         <div className="flex justify-center">
           <div className="px-4 pt-12 pb-6 flex flex-col w-fw mobile:px-12 sm:flex-row  desktop:px-0">
             <Link href="/">
-              <a>
+              <a aria-label="Home">
                 <div className="mb-4 sm:mr-16">
                   <img src="/logo.png" alt="logo" width="90" height="28" />
                 </div>
@@ -22,7 +22,7 @@ export default function Layout({ children, categories }) {
             </Link>
             <div className="flex flex-wrap mt-1">
               <Link href="/">
-                <a>
+                <a aria-label="Home">
                   <p className="
                     sm:mr-8 sm:mb-0
                     mb-4 text-left text-smaller mr-4
@@ -37,7 +37,7 @@ export default function Layout({ children, categories }) {
                     href={`/category/${slugify(category)}`}
                     key={index}
                   >
-                    <a>
+                    <a aria-label={category}>
                       <p className="
                           sm:mr-8 sm:mb-0
                           mb-4 text-left text-smaller mr-4
@@ -49,7 +49,7 @@ export default function Layout({ children, categories }) {
                 ))
               }
               <Link href="/categories">
-                <a>
+                <a aria-label="All categories">
                   <p className="
                     sm:mr-8 sm:mb-0
                     mb-4 text-left text-smaller mr-4 
@@ -79,7 +79,7 @@ export default function Layout({ children, categories }) {
             flex flex-1 mt-4
           ">
             <Link href="/admin">
-              <a>
+              <a aria-label="Admin panel">
               <p className="text-sm font-semibold">Admins</p>
               </a>
             </Link>

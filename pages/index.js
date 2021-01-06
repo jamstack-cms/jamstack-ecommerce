@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
 import { titleIfy, slugify } from '../utils/helpers'
-import fetchInventory from '../utils/inventoryProvider'
+import { fetchInventory } from '../utils/inventoryProvider'
 import { SiteContext, ContextProviderComponent } from '../context/mainContext'
 
 const Home = ({ inventoryData = [], categories: categoryData = [] }) => {

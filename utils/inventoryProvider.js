@@ -20,4 +20,6 @@ async function fetchInventory() {
   return Promise.resolve(inventory)
 }
 
-export default fetchInventory
+export {
+  fetchInventory
+}

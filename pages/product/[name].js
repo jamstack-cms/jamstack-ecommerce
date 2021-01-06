@@ -4,7 +4,7 @@ import { SiteContext, ContextProviderComponent } from '../../context/mainContext
 import Button from '../../components/Button'
 import Image from '../../components/Image'
 import QuantityPicker from '../../components/QuantityPicker'
-import fetchInventory from '../../utils/inventoryProvider'
+import { fetchInventory } from '../../utils/inventoryProvider'
 import { slugify } from '../../utils/helpers'
 
 const ItemView = (props) => {

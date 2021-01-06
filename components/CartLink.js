@@ -16,7 +16,7 @@ function CartLink(props) {
       <div className="fixed top-53 right-24 desktop:right-flexiblemargin z-10">
         <div className="flex flex-1 justify-end pr-4 relative">
           <Link href="/cart">
-            <a>
+            <a aria-label="Cart">
               <FaShoppingCart />
             </a>
           </Link>
