@@ -97,7 +97,7 @@ class ViewInventory extends React.Component {
                       <Image className="w-32 m-0" src={item.image} alt={item.name} />
                     </a>
                   </Link>
-                  <Link href={slugify(item.name)}>
+                  <Link href={`/product/${slugify(item.name)}`}>
                     <a>
                       <p className="m-0 pl-10 text-gray-600 text-sm">
                         {item.name}
