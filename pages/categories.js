@@ -11,6 +11,7 @@ function Categories ({ categories = [] }) {
         <CartLink />
         <Head>
           <title>Jamstack ECommerce - All Categories</title>
+          <meta name="description" content={`Jamstack ECommerce - All categories`} />
           <meta property="og:title" content="Jamstack ECommerce - All Categories" key="title" />
         </Head>
         <div className="
