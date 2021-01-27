@@ -16,7 +16,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
-    "react-toastify": "^6.2.0",
+    "react-toastify": "^7.0.1",
     "tailwindcss": "^2.0.2",
     "uuid": "^8.3.2"
   }
