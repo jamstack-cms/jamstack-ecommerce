@@ -21,7 +21,7 @@ model Category {
 model Product {
   id               Int        @id
   name             String
-  price            String
+  price            Float
   image            String
   brand            String
   categories       Category[]  @relation(references: [id])
