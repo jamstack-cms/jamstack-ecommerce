@@ -1,4 +1,10 @@
+import provideraquilacms from '../provider/aquila-cms/inventoryByCategory'
+
 function inventoryByCategory (inventory) {
+  if(process.env.NEXT_PUBLIC_PROVIDER === "aquila-cms") {
+    return provideraquilacms.inventoryByCategory(inventory);
+  }
+
   return inventory.reduce((acc, next) => {
     const categories = next.categories
     categories.forEach(c => {
