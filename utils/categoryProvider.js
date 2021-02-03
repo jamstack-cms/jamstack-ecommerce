@@ -1,9 +1,10 @@
 import inventory from './inventory'
-import provideraquilacms from '../provider/aquila-cms/categoryProvider'
 
 async function fetchCategories () {
-  if(process.env.NEXT_PUBLIC_PROVIDER === "aquila-cms") {
-    return provideraquilacms.fetchCategories();
+  // Is provider configured ?
+  if(process.env.NEXT_PUBLIC_PROVIDER) {
+    const provider = await import(`../provider/${process.env.NEXT_PUBLIC_PROVIDER}/categoryProvider`);
+    return provider.default.fetchCategories();
   }
 
   const categories = inventory.reduce((acc, next) => {

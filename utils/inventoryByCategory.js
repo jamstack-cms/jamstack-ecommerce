@@ -1,8 +1,9 @@
-import provideraquilacms from '../provider/aquila-cms/inventoryByCategory'
 
-function inventoryByCategory (inventory) {
-  if(process.env.NEXT_PUBLIC_PROVIDER === "aquila-cms") {
-    return provideraquilacms.inventoryByCategory(inventory);
+async function inventoryByCategory (inventory) {
+  // Is provider configured ?
+  if(process.env.NEXT_PUBLIC_PROVIDER) {
+    const provider = await import(`../provider/${process.env.NEXT_PUBLIC_PROVIDER}/inventoryByCategory`);
+    return provider.default.inventoryByCategory(inventory);
   }
 
   return inventory.reduce((acc, next) => {
