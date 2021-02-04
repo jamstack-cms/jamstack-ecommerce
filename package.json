@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "push-db": "npx prisma db push --preview-feature",
-    "seed-db": "npx ts-node prisma/seed.ts",
+    "seed-db": "npx prisma db seed --preview-feature",
     "db-studio": "npx prisma studio"
   },
   "dependencies": {
@@ -25,7 +25,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@prisma/cli": "2.15.0",
     "@types/node": "^14.14.22",
     "prisma": "^2.16.0",
     "ts-node": "^9.1.1",
