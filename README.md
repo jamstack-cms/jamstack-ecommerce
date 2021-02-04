@@ -17,8 +17,8 @@ Start by cloning and installing dependacies.
 - `$ yarn push-db`: Creates the db structure
 - `$ yarn seed-db`: Adds some sample data for you to start with
 - `$ yarn dev`: Runs the NexJS application that reads data from your database
-- `$ yarn db-studio`: Opens Prisma Studio wher you can view and edit your database
+- `$ yarn db-studio`: Opens Prisma Studio where you can view and edit your database
 
 ### Backend Details
 
-By default, the project is configured to use `sqlite` but you can change this to point to a `PostgreSQL` db instance or any other support dialect.
+By default, the project is configured to use `sqlite` but you can change this to point to a `PostgreSQL` db instance or any other supported dialect.
