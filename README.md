@@ -8,7 +8,7 @@ This is a fork from [Nader's Jamstack Ecommerce Next](https://github.com/jamstac
 
 ### Clone and Install Dependancies
 
-Start by cloning and installing dependacies.
+Start by cloning and installing dependancies.
 
 - `$ git clone https://github.com/joeynimu/jamstack-ecommerce.git`
 
