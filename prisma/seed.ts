@@ -16,7 +16,7 @@ async function main() {
   await Promise.all(
     products.map(
       ({
-        categories, // this is an array of ids
+        categories,
         id,
         name,
         price,
