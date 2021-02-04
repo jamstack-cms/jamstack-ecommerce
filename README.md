@@ -2,7 +2,7 @@
 
 ### Important!
 
-This is a fork from [Nader's Jamstack Ecommerce Next][https://github.com/jamstack-cms/jamstack-ecommerce]. He has done all the work with setting up and building the UI among other things. This fork shows you how you can add a backend using Prisma using any dialect supported.
+This is a fork from [Nader's Jamstack Ecommerce Next](https://github.com/jamstack-cms/jamstack-ecommerce). He has done all the work with setting up and building the UI among other things. This fork shows you how you can add a backend using Prisma using any dialect supported.
 
 ## Getting Started
 
