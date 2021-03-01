@@ -7,11 +7,29 @@ import {
   DisplaySmall,
   DisplayMedium,
 } from "../components"
+import { FC } from "react"
 import { titleIfy, slugify } from "../utils/helpers"
-import { fetchInventory } from "../utils/inventoryProvider"
 import CartLink from "../components/CartLink"
+import prismaClient from "../lib/prisma-client"
+import { Category, Product } from "@prisma/client"
 
-const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
+type inventoryDataType = Product & {
+  categories: Category[]
+}
+
+type categoryDataType = Category & {
+  products: Product[]
+}
+
+type Props = {
+  inventoryData: inventoryDataType[] | []
+  categories: categoryDataType[] | []
+}
+
+const Home: FC<Props> = ({
+  inventoryData = [],
+  categories: categoryData = [],
+}) => {
   const inventory = inventoryData.slice(0, 4)
   const categories = categoryData.slice(0, 2)
 
@@ -46,13 +64,13 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
       <div className="grid grid-cols-1 gap-4 my-4 lg:my-8 lg:grid-cols-2">
         <DisplayMedium
           imageSrc={categories[0].image}
-          subtitle={`${categories[0].itemCount} items`}
+          subtitle={`${categories[0].products.length} items`}
           title={titleIfy(categories[0].name)}
           link={`/category/${slugify(categories[0].name)}`}
         />
         <DisplayMedium
           imageSrc={categories[1].image}
-          subtitle={`${categories[1].itemCount} items`}
+          subtitle={`${categories[1].products.length} items`}
           title={titleIfy(categories[1].name)}
           link={`/category/${slugify(categories[1].name)}`}
         />
@@ -68,28 +86,28 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
         <DisplaySmall
           imageSrc={inventory[0].image}
           title={inventory[0].name}
-          subtitle={inventory[0].categories[0]}
+          subtitle={inventory[0].categories[0].name}
           link={`/product/${slugify(inventory[0].name)}`}
         />
 
         <DisplaySmall
           imageSrc={inventory[1].image}
           title={inventory[1].name}
-          subtitle={inventory[1].categories[0]}
+          subtitle={inventory[1].categories[0].name}
           link={`/product/${slugify(inventory[1].name)}`}
         />
 
         <DisplaySmall
           imageSrc={inventory[2].image}
           title={inventory[2].name}
-          subtitle={inventory[2].categories[0]}
+          subtitle={inventory[2].categories[0].name}
           link={`/product/${slugify(inventory[2].name)}`}
         />
 
         <DisplaySmall
           imageSrc={inventory[3].image}
           title={inventory[3].name}
-          subtitle={inventory[3].categories[0]}
+          subtitle={inventory[3].categories[0].name}
           link={`/product/${slugify(inventory[3].name)}`}
         />
       </div>
@@ -98,32 +116,22 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
 }
 
 export async function getStaticProps() {
-  const inventory = await fetchInventory()
+  const categories = await prismaClient.category.findMany({
+    include: {
+      products: true,
+    },
+  })
 
-  const inventoryCategorized = inventory.reduce((acc, next) => {
-    const categories = next.categories
-    categories.forEach((c) => {
-      const index = acc.findIndex((item) => item.name === c)
-      if (index !== -1) {
-        const item = acc[index]
-        item.itemCount = item.itemCount + 1
-        acc[index] = item
-      } else {
-        const item = {
-          name: c,
-          image: next.image,
-          itemCount: 1,
-        }
-        acc.push(item)
-      }
-    })
-    return acc
-  }, [])
+  const inventoryData = await prismaClient.product.findMany({
+    include: {
+      categories: true,
+    },
+  })
 
   return {
     props: {
-      inventoryData: inventory,
-      categories: inventoryCategorized,
+      inventoryData,
+      categories,
     },
   }
 }

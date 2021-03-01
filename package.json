@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "generate": "npx prisma generate",
     "push-db": "npx prisma db push --preview-feature",
     "seed-db": "npx prisma db seed --preview-feature",
     "db-studio": "npx prisma studio"
@@ -14,6 +15,7 @@
     "@prisma/client": "2.15.0",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.11.0",
+    "@types/react": "^17.0.2",
     "autoprefixer": "^10.1.0",
     "next": "10.0.4",
     "postcss": "^8.2.2",

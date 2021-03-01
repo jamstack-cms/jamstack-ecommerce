@@ -172,10 +172,10 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.15.0-25.e51dc3b5a9ee790a07104bec1c9477d51740fe54.tgz#d9c887bc8f30d1f107c9021b2565a8672d62622d"
   integrity sha512-KDxk7Zsc9tDoShCE7v+O1SnCUTUkMdfezjbuz9CBvdEBGMtYLgyHaZAO8M038uqy8KjgwV9PzyoLqvVfzfsngg==
 
-"@prisma/engines@2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1":
-  version "2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1"
-  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1.tgz#c7a53f31eafca0e4c010663740ee22ea678f757e"
-  integrity sha512-vt8w+vqCEaTUGZes7mrY5BkF3zZIPTQ9x+C9Ynmr9d+WW54vTqJt7lDFS6eps0LYoqdcCHEs3r/SydCqjII+OQ==
+"@prisma/engines@2.17.0-35.3c463ebd78b1d21d8fdacdd27899e280cf686223":
+  version "2.17.0-35.3c463ebd78b1d21d8fdacdd27899e280cf686223"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.17.0-35.3c463ebd78b1d21d8fdacdd27899e280cf686223.tgz#08bc3633fd27fb1935805ef16c37802ed713db5b"
+  integrity sha512-FKjVD6NYbGiQhwas3hA2uMpNchz+Mf3tv5qA8Ci9cAkKHGqt3jWjjUAK9juVBqeOcv4OPimQYMrkRX6SvaxBjg==
 
 "@stripe/react-stripe-js@^1.1.2":
   version "1.1.2"
@@ -198,6 +198,19 @@
   version "14.14.22"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.22.tgz#0d29f382472c4ccf3bd96ff0ce47daf5b7b84b18"
   integrity sha512-g+f/qj/cNcqKkc3tFqlXOYjrmZA+jNBiDzbP3kH+B+otKFqAdPgVTGP1IeKRdMml/aE69as5S4FqtxAbl+LaMw==
+
+"@types/prop-types@*":
+  version "15.7.3"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
+  integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+
+"@types/react@^17.0.2":
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.2.tgz#3de24c4efef902dd9795a49c75f760cbe4f7a5a8"
+  integrity sha512-Xt40xQsrkdvjn1EyWe1Bc0dJLcil/9x2vAuW7ya+PuQip4UYUaXyhzWmAbwRsdMgwOFHpfp7/FFZebDU6Y8VHA==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^3.0.2"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -3157,11 +3170,11 @@ pretty-hrtime@^1.0.3:
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
 prisma@^2.16.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.16.0.tgz#a4d3d82932f8aa4b4c5415d254bd9966ed9b5c33"
-  integrity sha512-tV+28U0dfmuC0lRWZlqI3PLx+5U2UFw4h5fikBexglXsMOE60S732UDnQPOKS/wztJE7EDS36lk6FInFVDpkPQ==
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.17.0.tgz#686469914ed13d4b0926ee5f17efb7a9ab741e8a"
+  integrity sha512-NypJI7OCXCfDkRKubbVb3nmPeRJ1SjQfg6QAwK06KsreBZl1F96rFz2iB2bl4kIrhLAbIySBjwUJlG87Jsxt7g==
   dependencies:
-    "@prisma/engines" "2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1"
+    "@prisma/engines" "2.17.0-35.3c463ebd78b1d21d8fdacdd27899e280cf686223"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
