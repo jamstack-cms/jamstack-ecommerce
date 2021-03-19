@@ -3,7 +3,7 @@ import { inventoryByCategory } from './inventoryByCategory'
 
 async function inventoryForCategory (category) {
   const inventory = await fetchInventory()
-  const byCategory = inventoryByCategory(inventory)
+  const byCategory = await inventoryByCategory(inventory)
   return byCategory[category].items
 }
 

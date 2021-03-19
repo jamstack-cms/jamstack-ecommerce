@@ -16,7 +16,11 @@ type Product {
 */
 
 async function fetchInventory() {
-  // const inventory = API.get(apiUrl)
+  // Is provider configured ?
+  if(process.env.NEXT_PUBLIC_PROVIDER) {
+    const provider = await import(`../provider/${process.env.NEXT_PUBLIC_PROVIDER}/inventoryProvider`);
+    return provider.default.fetchInventory();
+  }
   return Promise.resolve(inventory)
 }
 
