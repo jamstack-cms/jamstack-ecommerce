@@ -10,7 +10,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
 model Category {
   id            Int        @id
   name          String
