@@ -7,7 +7,7 @@ async function main() {
   await Promise.all(
     categories.map(({ name, id, image }) =>
       prisma.category.upsert({
-        where: { id: id },
+        where: { id },
         update: {},
         create: { name, id, image },
       })
