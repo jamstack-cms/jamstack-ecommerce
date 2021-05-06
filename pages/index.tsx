@@ -33,6 +33,8 @@ const Home: FC<Props> = ({
   const inventory = inventoryData.slice(0, 4)
   const categories = categoryData.slice(0, 2)
 
+  console.log({ inventory, categories })
+
   return (
     <>
       <CartLink />
@@ -133,6 +135,7 @@ export async function getStaticProps() {
       inventoryData,
       categories,
     },
+    revalidate: 1,
   }
 }
 
