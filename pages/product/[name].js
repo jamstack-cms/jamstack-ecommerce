@@ -4,13 +4,13 @@ import Button from "../../components/Button"
 import Image from "../../components/Image"
 import QuantityPicker from "../../components/QuantityPicker"
 import { fetchInventory } from "../../utils/inventoryProvider"
-import { slugify } from "../../utils/helpers"
+import { slugify } from "utils/helpers"
 import CartLink from "../../components/CartLink"
 import {
   SiteContext,
   ContextProviderComponent,
 } from "../../context/mainContext"
-import prismaClient from "../../lib/prisma-client"
+import prismaClient from "lib/prisma-client"
 
 const ItemView = (props) => {
   const [numberOfitems, updateNumberOfItems] = useState(1)
@@ -79,9 +79,9 @@ const ItemView = (props) => {
 }
 
 export async function getStaticPaths() {
-  const inventory = await fetchInventory()
-  const paths = inventory.map((item) => {
-    return { params: { name: slugify(item.name) } }
+  const products = await prismaClient.product.findMany()
+  const paths = products.map((product) => {
+    return { params: { name: slugify(product.name) } }
   })
   return {
     paths,
@@ -102,6 +102,7 @@ export async function getStaticProps({ params }) {
     props: {
       product,
     },
+    revalidate: 1,
   }
 }
 
