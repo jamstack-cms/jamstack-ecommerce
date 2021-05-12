@@ -12,7 +12,7 @@
     "@stripe/stripe-js": "^1.11.0",
     "autoprefixer": "^10.1.0",
     "next": "10.0.4",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.10",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
