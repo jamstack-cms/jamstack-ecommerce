@@ -13,9 +13,9 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
       <CartLink />
       <div className="w-full">
         <Head>
-          <title>Jamstack ECommerce</title>
-          <meta name="description" content="Jamstack ECommerce Next provides a way to quickly get up and running with a fully configurable ECommerce site using Next.js." />
-          <meta property="og:title" content="Jamstack ECommerce" key="title" />
+          <title>Cakeazy</title>
+          <meta name="description" content="CAKEAZY description inserted here" />
+          <meta property="og:title" content="CAKEAZY" key="title" />
         </Head>
         <div className="bg-blue-300
         p-6 pb-10 smpb-6
@@ -63,7 +63,7 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
         />
       </div>
       <div className="pt-10 pb-6 flex flex-col items-center">
-        <h2 className="text-4xl mb-3">Trending Now</h2>
+        <h2 className="text-4xl mb-3">Trending Tomorrow</h2>
         <p className="text-gray-600 text-sm">Find the perfect piece or accessory to finish off your favorite room in the house.</p>
       </div>
       <div className="my-8 flex flex-col lg:flex-row justify-between">
