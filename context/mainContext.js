@@ -61,7 +61,7 @@ class ContextProviderComponent extends React.Component {
       cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart)
     }))
     toast("Successfully added item to cart!", {
-      position: toast.POSITION.TOP_LEFT
+      position: 'top-left'
     })
     this.forceUpdate()
   }

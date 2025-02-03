@@ -44,19 +44,19 @@ class ViewInventory extends React.Component {
   render() {
     const { inventory, currentItem, editingIndex } = this.state
     return (
-      <div>
+      (<div>
         <h2 className="text-3xl">Inventory</h2>
         {
           inventory.map((item, index) => {
             const isEditing = editingIndex === index
             if (isEditing) {
               return (
-                <div className="border-b py-10" key={item.id}>
+                (<div className="border-b py-10" key={item.id}>
                   <div className="flex items-center">
-                    <Link href={`/product/${slugify(item.name)}`}>
-                      <a aria-label={item.name}>
-                        <Image className="w-32 m-0" src={item.image} alt={item.name} />
-                      </a>
+                    <Link href={`/product/${slugify(item.name)}`} aria-label={item.name}>
+
+                      <Image className="w-32 m-0" src={item.image} alt={item.name} />
+
                     </Link>
                     <input
                       onChange={(e) => this.onChange(e, index)}
@@ -86,23 +86,23 @@ class ViewInventory extends React.Component {
                       <p className="text-sm ml-10 m-0">Save</p>
                     </div>
                   </div>
-                </div>
-              )
+                </div>)
+              );
             }
             return (
-              <div className="border-b py-10" key={item.id}>
+              (<div className="border-b py-10" key={item.id}>
                 <div className="flex items-center">
                   <Link href={`/product/${slugify(item.name)}`}>
-                    <a>
-                      <Image className="w-32 m-0" src={item.image} alt={item.name} />
-                    </a>
+
+                    <Image className="w-32 m-0" src={item.image} alt={item.name} />
+
                   </Link>
                   <Link href={`/product/${slugify(item.name)}`}>
-                    <a>
-                      <p className="m-0 pl-10 text-gray-600 text-sm">
-                        {item.name}
-                      </p>
-                    </a>
+
+                    <p className="m-0 pl-10 text-gray-600 text-sm">
+                      {item.name}
+                    </p>
+
                   </Link>
                   <div className="flex flex-1 justify-end">
                     <p className="m-0 pl-10 text-gray-900 text-sm">In stock: {item.currentInventory}</p>
@@ -115,12 +115,12 @@ class ViewInventory extends React.Component {
                     <p role="button" onClick={() => this.editItem(item, index)} className="text-sm ml-10 m-0">Edit</p>
                   </div>
                 </div>
-              </div>
-            )
+              </div>)
+            );
           })
         }
-      </div>
-    )
+      </div>)
+    );
   }
 }
 

@@ -1,22 +1,186 @@
 /* ./styles/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@font-face {
-  font-family: "Eina";
-  src: url("/fonts/Eina.otf");
+@theme {
+  --spacing-fw: 1440px;
+
+  --text-xxs: 0.6rem;
+  --text-smaller: 0.95rem;
+
+  --font-light: Eina Light;
+  --font-semibold: Eina SemiBold;
+
+  --breakpoint-mobile: 600px;
+  --breakpoint-c_large: 1200px;
+  --breakpoint-desktop: 1440px;
+
+  --width-28: 7rem;
+  --width-38: 10rem;
+  --width-48: 12rem;
+  --width-52: 13rem;
+  --width-56: 14rem;
+  --width-60: 15rem;
+  --width-64: 16rem;
+  --width-68: 17rem;
+  --width-72: 18rem;
+  --width-80: 20rem;
+  --width-88: 22rem;
+  --width-96: 24rem;
+  --width-104: 26rem;
+  --width-112: 28rem;
+  --width-120: 30rem;
+  --width-124: 31rem;
+  --width-128: 32rem;
+  --width-132: 33rem;
+  --width-136: 34rem;
+  --width-140: 35rem;
+  --width-144: 36rem;
+  --width-c_large: 1200px;
+  --width-flex-half: calc((100% / 2) - 15px);
+  --width-flex-fourth: calc((100% / 4) - 20px);
+
+  --inset-20: 20px;
+  --inset-22: 22px;
+  --inset-24: 24px;
+  --inset-26: 26px;
+  --inset-28: 28px;
+  --inset-30: 30px;
+  --inset-35: 35px;
+  --inset-40: 40px;
+  --inset-45: 45px;
+  --inset-46: 46px;
+  --inset-47: 47px;
+  --inset-48: 48px;
+  --inset-49: 49px;
+  --inset-50: 50px;
+  --inset-51: 51px;
+  --inset-52: 52px;
+  --inset-53: 53px;
+  --inset-54: 54px;
+  --inset-55: 55px;
+  --inset-60: 60px;
+  --inset-100: 100px;
+  --inset-200: 200px;
+  --inset-250: 250px;
+  --inset-300: 300px;
+  --inset-400: 400px;
+  --inset-flexiblemargin: calc((100vw - 1420px) / 2);
+
+  --height-48: 12rem;
+  --height-52: 13rem;
+  --height-56: 14rem;
+  --height-60: 15rem;
+  --height-64: 16rem;
+  --height-68: 17rem;
+  --height-72: 18rem;
+  --height-80: 20rem;
+  --height-88: 22rem;
+  --height-96: 24rem;
+  --height-104: 26rem;
+  --height-112: 28rem;
+  --height-120: 30rem;
+  --height-124: 31rem;
+  --height-128: 32rem;
+  --height-132: 33rem;
+  --height-136: 34rem;
+  --height-140: 35rem;
+  --height-144: 36rem;
+  --height-hero: 500px;
+
+  --padding-_5: 0.125rem;
+
+  --container-48: 12rem;
+  --container-52: 13rem;
+  --container-56: 14rem;
+  --container-60: 15rem;
+  --container-64: 16rem;
+  --container-68: 17rem;
+  --container-72: 18rem;
+  --container-80: 20rem;
+  --container-88: 22rem;
+  --container-96: 24rem;
+  --container-104: 26rem;
+  --container-112: 28rem;
+  --container-120: 30rem;
+  --container-124: 31rem;
+  --container-128: 32rem;
+  --container-132: 33rem;
+  --container-136: 34rem;
+  --container-140: 35rem;
+  --container-144: 36rem;
+  --container-fw: 1440px;
+  --container-c_large: 1200px;
+
+  --max-height-36: 9rem;
+  --max-height-40: 10rem;
+  --max-height-44: 11rem;
+  --max-height-48: 12rem;
+  --max-height-52: 13rem;
+  --max-height-56: 14rem;
+  --max-height-60: 15rem;
+  --max-height-64: 16rem;
+  --max-height-68: 17rem;
+  --max-height-72: 18rem;
+  --max-height-80: 20rem;
+  --max-height-88: 22rem;
+  --max-height-96: 24rem;
+  --max-height-104: 26rem;
+  --max-height-112: 28rem;
+  --max-height-120: 30rem;
+  --max-height-124: 31rem;
+  --max-height-128: 32rem;
+  --max-height-132: 33rem;
+  --max-height-136: 34rem;
+  --max-height-140: 35rem;
+  --max-height-144: 36rem;
+  --max-height-fw: 1440px;
+
+  --z-index--2: -2;
+  --z-index--4: -4;
+  --z-index--6: -6;
+  --z-index--12: -12;
+
+  --background-color-primary: #89bdf9;
+  --background-color-light: #f5f5f5;
+  --background-color-light-200: #f0f0f0;
+  --background-color-light-300: #e8e8e8;
+
+  --leading-large: 54px;
 }
 
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-@font-face {
-  font-family: "Eina Light";
-  src: url("/fonts/Eina-Light.otf");
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
-@font-face {
-  font-family: "Eina SemiBold";
-  src: url("/fonts/Eina-SemiBold.otf");
+@layer utilities {
+  @font-face {
+    font-family: 'Eina';
+    src: url('/fonts/Eina.otf');
+  }
+
+  @font-face {
+    font-family: 'Eina Light';
+    src: url('/fonts/Eina-Light.otf');
+  }
+
+  @font-face {
+    font-family: 'Eina SemiBold';
+    src: url('/fonts/Eina-SemiBold.otf');
+  }
 }
 
 @layer base {

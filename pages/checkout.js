@@ -127,7 +127,7 @@ const Checkout = ({ context }) => {
   }
 
   return (
-    <div className="flex flex-col items-center pb-10">
+    (<div className="flex flex-col items-center pb-10">
       <Head>
         <title>Jamstack ECommerce - Checkout</title>
         <meta name="description" content={`Check out`} />
@@ -141,13 +141,13 @@ const Checkout = ({ context }) => {
       >
         <div className="pt-10 pb-8">
           <h1 className="text-5xl font-light mb-6">Checkout</h1>
-          <Link href="/cart">
-            <a aria-label="Cart">
-              <div className="cursor-pointer flex  items-center">
-                <FaLongArrowAltLeft className="mr-2 text-gray-600" />
-                <p className="text-gray-600 text-sm">Edit Cart</p>
-              </div>
-            </a>
+          <Link href="/cart" aria-label="Cart">
+
+            <div className="cursor-pointer flex  items-center">
+              <FaLongArrowAltLeft className="mr-2 text-gray-600" />
+              <p className="text-gray-600 text-sm">Edit Cart</p>
+            </div>
+
           </Link>
         </div>
 
@@ -265,8 +265,8 @@ const Checkout = ({ context }) => {
           </div>
         )}
       </div>
-    </div>
-  )
+    </div>)
+  );
 }
 
 export default CheckoutWithContext

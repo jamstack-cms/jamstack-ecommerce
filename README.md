@@ -1,6 +1,8 @@
-## Jamstack ECommerce Next
+## Jamstack ECommerce Next Upgraded
 
 Jamstack ECommerce Next provides a way to quickly get up and running with a fully configurable ECommerce site using Next.js.
+
+This fork upgrades it to Node v22 and Next v22 while trying to prevent it from breaking. I also added dockerfile and docker-compose files for easy dockerization.
 
 Out of the box, the site uses completely static data coming from a provider at `providers/inventoryProvider.js`. You can update this provider to fetch data from any real API by changing the call in the `getInventory` function.
 
